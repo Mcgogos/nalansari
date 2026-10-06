@@ -22,7 +22,7 @@ export default function Footer() {
           </div>
           
           <div className={styles.footerNav}>
-            <Link href="#movements" className={`nav-link ${styles.footerLink}`}>{t('nav.services')}</Link>
+            <Link href="#pilates" className={`nav-link ${styles.footerLink}`}>{t('nav.services')}</Link>
             <Link href="#schedule" className={`nav-link ${styles.footerLink}`}>{t('nav.schedule')}</Link>
             <Link href="#about" className={`nav-link ${styles.footerLink}`}>{t('nav.about')}</Link>
             <Link href="#trainers" className={`nav-link ${styles.footerLink}`}>{t('nav.trainers')}</Link>
@@ -31,19 +31,33 @@ export default function Footer() {
           <div className={styles.footerNav}>
             <Link href="https://www.instagram.com/ns.fithouse.pilates.fitness?stkn=emo0Nnd5YWZraGJr" className={`nav-link ${styles.footerLink}`} target="_blank" rel="noopener noreferrer">Instagram</Link>
             <Link href={`https://wa.me/905444798807?text=${encodeURIComponent(t('wa.defaultMessage'))}`} className={`nav-link ${styles.footerLink}`}>WhatsApp</Link>
-            <Link href="#contact" className={`nav-link ${styles.footerLink}`}>{t('loc.contact.label')}</Link>
+            <Link href="#ucretsiz-deneme" className={`nav-link ${styles.footerLink}`}>{t('loc.contact.label')}</Link>
           </div>
         </div>
         
-        <div className={`text-caption ${styles.bottomBar}`}>
-          <p>&copy; {new Date().getFullYear()} Nalan Sarı Pilates & Fitness. {t('footer.rights')}</p>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <span>Designed by</span>
-            <a href="https://www.musecreativehouse.com" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center' }}>
+        <div className={styles.bottomBar}>
+          <p className={styles.copyrightText}>
+            &copy; {new Date().getFullYear()} Nalan Sarı Pilates & Fitness. {t('footer.rights')}
+          </p>
+          
+          {/* Prominent Designer Badge – Muse Creative House */}
+          <a 
+            href="https://www.musecreativehouse.com" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className={styles.designerLink}
+          >
+            <span className={styles.designerLabel}>Designed by</span>
+            <div className={styles.museLogoFrame}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/muse-logo.png" alt="Muse Creative House" style={{ height: '32px', objectFit: 'contain' }} />
-            </a>
-          </div>
+              <img 
+                src="/muse-logo.jpg" 
+                alt="Muse Creative House" 
+                className={styles.museLogoImg} 
+              />
+            </div>
+            <span className={styles.designerName}>Muse Creative House</span>
+          </a>
         </div>
       </div>
     </footer>
