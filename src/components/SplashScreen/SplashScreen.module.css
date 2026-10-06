@@ -3,7 +3,7 @@
   inset: 0;
   width: 100vw;
   height: 100vh;
-  background: radial-gradient(ellipse at center, #111008 0%, #050505 70%);
+  background: radial-gradient(ellipse at 50% 60%, #130e02 0%, #050505 65%);
   z-index: 9999;
   display: flex;
   align-items: center;
@@ -11,58 +11,65 @@
   overflow: hidden;
 }
 
-/* ── 3D Canvas ── */
+/* ── 3D Canvas fills entire background ── */
 .canvasContainer {
   position: absolute;
   inset: 0;
   z-index: 1;
 }
 
-/* ── Center Content ── */
+/* ── Soft gradient overlay so text reads cleanly ── */
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: radial-gradient(ellipse at center, rgba(5,5,5,0.55) 30%, transparent 80%);
+  pointer-events: none;
+}
+
+/* ── Center content ── */
 .centerContent {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0;
   pointer-events: none;
-  /* Subtle soft glow behind the text block */
-  filter: drop-shadow(0 0 60px rgba(212, 167, 44, 0.25));
 }
 
-/* ── Big NS Logo ── */
+/* ── NS logo mark ── */
 .logoMark {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1.25rem;
-}
-
-.nsSvg {
-  width: 240px;
-  height: auto;
-  overflow: visible;
-  filter: drop-shadow(0 0 24px rgba(212, 167, 44, 0.6));
-}
-
-/* ── Divider ── */
-.dividerLine {
-  width: 160px;
-  height: 1.5px;
-  background: linear-gradient(90deg, transparent, #D4A72C, transparent);
-  transform-origin: center;
   margin-bottom: 1.5rem;
 }
 
-/* ── Title ── */
+.nsSvg {
+  width: 200px;
+  height: auto;
+  overflow: visible;
+  filter: drop-shadow(0 0 30px rgba(212, 167, 44, 0.7))
+          drop-shadow(0 0 60px rgba(212, 167, 44, 0.3));
+}
+
+/* ── Divider line ── */
+.dividerLine {
+  width: 140px;
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent, #D4A72C 30%, #D4A72C 70%, transparent);
+  transform-origin: center;
+  margin-bottom: 1.25rem;
+}
+
+/* ── Name title ── */
 .title {
-  font-family: 'Inter', sans-serif;
-  font-size: clamp(1.75rem, 5vw, 2.75rem);
+  font-family: var(--font-geist-sans), 'Inter', -apple-system, sans-serif;
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
   font-weight: 300;
   letter-spacing: 0.55em;
-  margin-right: -0.55em; /* optical compensation */
+  margin-right: -0.55em;
   color: #F3F0E8;
   margin-bottom: 0.75rem;
   text-align: center;
@@ -70,10 +77,10 @@
 
 /* ── Subtitle ── */
 .subtitle {
-  font-family: 'Inter', sans-serif;
-  font-size: clamp(0.6rem, 1.5vw, 0.8rem);
+  font-family: var(--font-geist-sans), 'Inter', -apple-system, sans-serif;
+  font-size: clamp(0.6rem, 1.4vw, 0.78rem);
   font-weight: 400;
-  letter-spacing: 0.35em;
+  letter-spacing: 0.4em;
   color: #D4A72C;
   text-align: center;
   text-transform: uppercase;

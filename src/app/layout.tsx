@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
 import { LanguageProvider } from "@/context/LanguageContext";
 import "./globals.css";
 
@@ -23,8 +24,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="tr">
-      <body className={inter.variable}>
+    <html lang="tr" className={`${GeistSans.variable} ${inter.variable}`}>
+      <body>
         <LanguageProvider>
           {children}
         </LanguageProvider>
