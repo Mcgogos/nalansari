@@ -76,11 +76,8 @@ export default function Hero() {
           </p>
           
           <div className={styles.actions}>
-            <Link href="#planla" className={styles.primaryCta}>
+            <Link href="#ucretsiz-deneme" className={styles.primaryCta}>
               {t('hero.cta.primary')} <ArrowRight size={18} />
-            </Link>
-            <Link href="#studio" className={styles.secondaryCta}>
-              {t('hero.cta.secondary')}
             </Link>
           </div>
         </div>
