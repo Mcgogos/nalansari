@@ -14,6 +14,7 @@ import { Trainers } from '@/components/Trainers';
 import ReviewsAndVoice from '@/components/ReviewsAndVoice/ReviewsAndVoice';
 import { InstagramGrid } from '@/components/InstagramGrid';
 import { ConversionForm } from '@/components/ConversionForm';
+import { FreeTrialForm } from '@/components/FreeTrialForm';
 import { Location, Footer } from '@/components/Footer';
 import { FloatingWhatsApp } from '@/components/FloatingWhatsApp';
 
@@ -27,6 +28,7 @@ export default function Home() {
       <main style={{ opacity: splashFinished ? 1 : 0, transition: 'opacity 0.5s ease' }}>
         <Navigation />
         <Hero />
+        <FreeTrialForm />
         <OnboardingQuiz />
         <BrandStory />
         <Services />

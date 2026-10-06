@@ -3,85 +3,124 @@
   inset: 0;
   width: 100vw;
   height: 100vh;
-  background: radial-gradient(ellipse at 50% 60%, #130e02 0%, #050505 65%);
+  background: #050505;
   z-index: 9999;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   overflow: hidden;
 }
 
-/* ── 3D Canvas fills entire background ── */
-.canvasContainer {
+/* ── Animated radial BG ── */
+.bgGradient {
   position: absolute;
   inset: 0;
-  z-index: 1;
-}
-
-/* ── Soft gradient overlay so text reads cleanly ── */
-.overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  background: radial-gradient(ellipse at center, rgba(5,5,5,0.55) 30%, transparent 80%);
+  opacity: 0;
+  background:
+    radial-gradient(ellipse 70% 50% at 15% 50%, rgba(212,167,44,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 50% at 85% 50%, rgba(212,167,44,0.10) 0%, transparent 60%),
+    radial-gradient(ellipse 100% 80% at 50% 50%, #0d0b02 0%, #050505 80%);
   pointer-events: none;
 }
 
-/* ── Center content ── */
-.centerContent {
+/* ── Subtle grid depth ── */
+.gridLines {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(212,167,44,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212,167,44,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black, transparent);
+}
+
+/* ── Letters Row ── */
+.lettersRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
-  z-index: 3;
+  gap: 0;
+}
+
+/* ── Each letter wrapper (letter + name below) ── */
+.letterWrap {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  pointer-events: none;
+  gap: 1rem;
+  position: relative;
 }
 
-/* ── NS logo mark ── */
-.logoMark {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1.5rem;
-}
-
-.nsSvg {
-  width: 200px;
+/* ── Letter SVGs ── */
+.letterSvg {
+  width: clamp(100px, 18vw, 200px);
   height: auto;
   overflow: visible;
-  filter: drop-shadow(0 0 30px rgba(212, 167, 44, 0.7))
-          drop-shadow(0 0 60px rgba(212, 167, 44, 0.3));
+  filter: drop-shadow(0 0 40px rgba(212,167,44,0.25));
 }
 
-/* ── Divider line ── */
-.dividerLine {
-  width: 140px;
-  height: 1.5px;
-  background: linear-gradient(90deg, transparent, #D4A72C 30%, #D4A72C 70%, transparent);
-  transform-origin: center;
-  margin-bottom: 1.25rem;
+.letterN {
+  filter: drop-shadow(0 0 30px rgba(243,240,232,0.15));
 }
 
-/* ── Name title ── */
-.title {
+.letterS {
+  filter: drop-shadow(0 0 35px rgba(212,167,44,0.5));
+}
+
+/* ── Impact flash at center ── */
+.impactFlash {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,230,100,0.95) 0%, rgba(212,167,44,0.4) 50%, transparent 70%);
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* ── Name labels ── */
+.nameLabel {
   font-family: var(--font-geist-sans), 'Inter', -apple-system, sans-serif;
-  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  font-size: clamp(1rem, 2.5vw, 1.75rem);
   font-weight: 300;
-  letter-spacing: 0.55em;
-  margin-right: -0.55em;
+  letter-spacing: 0.4em;
+  margin-right: -0.4em;
   color: #F3F0E8;
-  margin-bottom: 0.75rem;
   text-align: center;
+  white-space: nowrap;
 }
 
-/* ── Subtitle ── */
+.nameLabelYellow {
+  color: #D4A72C;
+}
+
+/* ── Tagline ── */
 .subtitle {
   font-family: var(--font-geist-sans), 'Inter', -apple-system, sans-serif;
-  font-size: clamp(0.6rem, 1.4vw, 0.78rem);
+  font-size: clamp(0.55rem, 1.3vw, 0.72rem);
   font-weight: 400;
-  letter-spacing: 0.4em;
-  color: #D4A72C;
+  letter-spacing: 0.45em;
+  color: rgba(212,167,44,0.7);
   text-align: center;
   text-transform: uppercase;
+  margin-top: 2.5rem;
+}
+
+@media (max-width: 600px) {
+  .lettersRow {
+    gap: 0;
+  }
+  .letterSvg {
+    width: 90px;
+  }
+  .nameLabel {
+    font-size: 0.9rem;
+    letter-spacing: 0.25em;
+  }
 }
