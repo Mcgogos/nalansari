@@ -18,7 +18,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const stored = localStorage.getItem('ns_lang') as Language;
     if (stored && (stored === 'tr' || stored === 'en')) {
-      setLanguage(stored);
+      setLanguage(stored); // eslint-disable-line react-hooks/set-state-in-effect
     }
     setMounted(true);
   }, []);

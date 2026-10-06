@@ -49,7 +49,7 @@ export default function Navigation() {
     <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ''}`}>
       <div className={`container ${styles.container}`}>
         <Link href="/" className={styles.logo} onClick={closeMenu}>
-          <img src="/logo.png" alt="Nalan Sarı" className={styles.logoImage} />
+          {/* eslint-disable-next-line @next/next/no-img-element */} <img src="/logo.png" alt="Nalan Sarı" className={styles.logoImage} />
         </Link>
 
         {/* Desktop Menu */}
