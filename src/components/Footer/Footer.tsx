@@ -39,8 +39,10 @@ export default function Footer() {
           <p>&copy; {new Date().getFullYear()} Nalan Sarı Pilates & Fitness. {t('footer.rights')}</p>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
             <span>Designed by</span>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/muse-logo.png" alt="Muse Creative House" style={{ height: '24px', filter: 'brightness(0) invert(1)' }} />
+            <a href="https://www.musecreativehouse.com" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center' }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/muse-logo.png" alt="Muse Creative House" style={{ height: '32px', objectFit: 'contain' }} />
+            </a>
           </div>
         </div>
       </div>

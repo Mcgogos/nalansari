@@ -80,13 +80,11 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
   })() : true;
 
   useEffect(() => {
-    const hasVisited = sessionStorage.getItem('nalansari_visited');
     const isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const durationMultiplier = hasVisited || isReducedMotion ? 0.3 : 1;
+    const durationMultiplier = isReducedMotion ? 0.3 : 1;
 
     const tl = gsap.timeline({
       onComplete: () => {
-        sessionStorage.setItem('nalansari_visited', 'true');
         onComplete();
       }
     });
