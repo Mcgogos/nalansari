@@ -32,6 +32,12 @@
   text-transform: uppercase;
 }
 
+.logoImage {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+}
+
 .desktopMenu {
   display: flex;
   gap: 2rem;
