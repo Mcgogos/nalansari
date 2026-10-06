@@ -1,0 +1,194 @@
+.section {
+  padding: 8rem 0;
+  background-color: var(--color-charcoal);
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.quizWrapper {
+  background-color: var(--color-deep-black);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 24px;
+  padding: 5rem 4rem;
+  width: 100%;
+  max-width: 800px;
+  min-height: 450px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.stepContent {
+  text-align: center;
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+.resultContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.stepContent h2, .stepContent h3 {
+  margin-bottom: 1.5rem;
+}
+
+.stepContent p {
+  color: var(--color-soft-gray);
+  margin-bottom: 3rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.startBtn {
+  background-color: var(--color-mustard);
+  color: var(--color-deep-black);
+  padding: 1.25rem 3rem;
+  border-radius: 40px;
+  transition: all 0.3s ease;
+}
+
+.startBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(212, 167, 44, 0.2);
+}
+
+.backBtn {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  color: var(--color-soft-gray);
+  transition: color 0.3s ease;
+  padding: 0.5rem;
+}
+
+.backBtn:hover {
+  color: var(--color-warm-white);
+}
+
+.optionsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.optionBtn {
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  color: var(--color-warm-white);
+  text-align: left;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.optionBtn:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.optionBtn.selected {
+  background-color: rgba(212, 167, 44, 0.1);
+  border-color: var(--color-mustard);
+  color: var(--color-mustard);
+}
+
+.successIcon {
+  color: var(--color-mustard);
+  margin-bottom: 2rem;
+}
+
+.resultContent h2 {
+  color: var(--color-mustard);
+  margin: 1rem 0 2rem;
+}
+
+.resultActions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 350px;
+  align-items: center;
+}
+
+.whatsappBtn {
+  background-color: #25D366; /* WhatsApp brand color */
+  color: white;
+  width: 100%;
+  padding: 1.25rem 2rem;
+  border-radius: 40px;
+  transition: all 0.3s ease;
+}
+
+.whatsappBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+}
+
+.restartBtn {
+  color: var(--color-soft-gray);
+  padding: 1rem;
+  transition: color 0.3s ease;
+}
+
+.restartBtn:hover {
+  color: var(--color-warm-white);
+}
+
+.progressContainer {
+  position: absolute;
+  bottom: 3rem;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.progressBar {
+  width: 200px;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background-color: var(--color-mustard);
+  transition: width 0.4s ease;
+}
+
+@media (max-width: 768px) {
+  .quizWrapper {
+    padding: 4rem 2rem;
+    border-radius: 16px;
+    min-height: 500px;
+  }
+  
+  .backBtn {
+    top: 1rem;
+    left: 1rem;
+  }
+}

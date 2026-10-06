@@ -1,0 +1,26 @@
+{
+  "name": "Nalan Sarı Pilates & Fitness",
+  "short_name": "NS Pilates",
+  "description": "Pilates, Fitness, Reformer ve Personal Training deneyimi",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A0A0A",
+  "theme_color": "#D4A72C",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,0 +1,190 @@
+.section {
+  padding: 8rem 0;
+  background-color: var(--color-deep-black);
+  position: relative;
+  overflow: hidden;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header h2 {
+  margin-bottom: 1rem;
+}
+
+.header p {
+  color: var(--color-soft-gray);
+}
+
+.content {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.mapContainer {
+  flex: 1;
+  max-width: 400px;
+  position: relative;
+}
+
+.svgMap {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.05));
+}
+
+.zone {
+  fill: rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  stroke: rgba(255, 255, 255, 0.2);
+  stroke-width: 2;
+}
+
+.zone:hover {
+  fill: rgba(212, 167, 44, 0.3); /* mustard with opacity */
+  stroke: var(--color-mustard);
+}
+
+.zone.active {
+  fill: rgba(212, 167, 44, 0.5);
+  stroke: var(--color-mustard);
+  filter: drop-shadow(0 0 10px rgba(212, 167, 44, 0.5));
+}
+
+.pulseDot {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: var(--color-mustard);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: pulse 2s infinite;
+}
+
+.dotNeck { top: 12.5%; left: 50%; transform: translate(-50%, -50%); }
+.dotBack { top: 22.5%; left: 50%; transform: translate(-50%, -50%); }
+.dotCore { top: 35%; left: 50%; transform: translate(-50%, -50%); }
+.dotLegs { top: 60%; left: 50%; transform: translate(-50%, -50%); }
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(212, 167, 44, 0.7); }
+  70% { box-shadow: 0 0 0 15px rgba(212, 167, 44, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(212, 167, 44, 0); }
+}
+
+.infoContainer {
+  flex: 1;
+  max-width: 500px;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+}
+
+.infoCard {
+  background-color: var(--color-charcoal);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 3rem;
+  width: 100%;
+  animation: slideIn 0.4s ease-out;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.badge {
+  background-color: rgba(212, 167, 44, 0.15);
+  color: var(--color-mustard);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: var(--text-caption);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+}
+
+.cardDesc {
+  color: var(--color-soft-gray);
+  margin-bottom: 2rem;
+}
+
+.recommendation {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.recommendation h4 {
+  color: var(--color-warm-white);
+}
+
+.ctaBtn {
+  background-color: var(--color-warm-white);
+  color: var(--color-deep-black);
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.ctaBtn:hover {
+  background-color: var(--color-mustard);
+  transform: translateY(-2px);
+}
+
+.placeholderCard {
+  background-color: transparent;
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 3rem;
+  width: 100%;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.placeholderIcon {
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 4rem 0;
+  }
+  
+  .content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .mapContainer {
+    max-width: 300px;
+  }
+  
+  .infoCard, .placeholderCard {
+    padding: 2rem;
+    min-height: auto;
+  }
+}

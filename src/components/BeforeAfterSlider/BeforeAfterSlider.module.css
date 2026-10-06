@@ -1,0 +1,139 @@
+.section {
+  padding: 8rem 0;
+  background-color: var(--color-deep-black);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header h2 {
+  margin-bottom: 1rem;
+}
+
+.header p {
+  color: var(--color-soft-gray);
+}
+
+.sliderWrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.comparisonContainer {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  aspect-ratio: 3/4; /* Matches generated image aspect ratio */
+  border-radius: 24px;
+  overflow: hidden;
+  cursor: col-resize;
+  touch-action: none; /* Prevents scroll while dragging on mobile */
+  user-select: none;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.imageContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.foreground {
+  z-index: 2;
+  will-change: clip-path; /* Optimization for drag performance */
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.labelBefore, .labelAfter {
+  position: absolute;
+  top: 2rem;
+  padding: 0.5rem 1rem;
+  background-color: rgba(10, 10, 10, 0.7);
+  backdrop-filter: blur(5px);
+  color: var(--color-warm-white);
+  font-size: var(--text-caption);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--ls-label);
+  border-radius: 20px;
+  z-index: 3;
+}
+
+.labelBefore {
+  left: 2rem;
+}
+
+.labelAfter {
+  right: 2rem;
+}
+
+.handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: var(--color-warm-white);
+  z-index: 4;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.handleLine {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: var(--color-warm-white);
+}
+
+.handleButton {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  background-color: var(--color-warm-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease;
+}
+
+.comparisonContainer:active .handleButton {
+  transform: scale(0.9);
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 4rem 0;
+  }
+  
+  .labelBefore, .labelAfter {
+    top: 1rem;
+    padding: 0.25rem 0.75rem;
+  }
+  
+  .labelBefore { left: 1rem; }
+  .labelAfter { right: 1rem; }
+  
+  .handleButton {
+    width: 40px;
+    height: 40px;
+  }
+}

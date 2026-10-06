@@ -8,6 +8,13 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter", weight: ["40
 export const metadata: Metadata = {
   title: "Nalan Sarı Pilates & Fitness | Pilates, Fitness ve Personal Training",
   description: "Nalan Sarı Pilates & Fitness ile Pilates, Fitness, Reformer ve Personal Training deneyimini keşfedin. Size uygun programı seçin ve ilk dersinizi planlayın.",
+  manifest: "/manifest.json",
+  themeColor: "#0A0A0A",
+  appleWebApp: {
+    capable: true,
+    title: "NS Pilates",
+    statusBarStyle: "black-translucent",
+  }
 };
 
 export default function RootLayout({
