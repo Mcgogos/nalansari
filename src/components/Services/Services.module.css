@@ -1,0 +1,89 @@
+.section {
+  padding: 8rem 0;
+  background-color: var(--color-deep-black);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+}
+
+.serviceItem {
+  background-color: var(--color-charcoal);
+  padding: 3rem;
+  border-radius: 4px;
+  border-top: 2px solid transparent;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.serviceItem:hover {
+  border-color: var(--color-mustard);
+  transform: translateY(-5px);
+}
+
+.serviceTitle {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  color: var(--color-warm-white);
+  margin-bottom: 1rem;
+  letter-spacing: 0.05em;
+}
+
+.serviceDesc {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-soft-gray);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.detailsList {
+  list-style: none;
+  margin-bottom: 2rem;
+}
+
+.detailsList li {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--color-warm-white);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.detailsList li::before {
+  content: '•';
+  color: var(--color-mustard);
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-warm-white);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid transparent;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.serviceItem:hover .ctaButton {
+  color: var(--color-mustard);
+  border-color: var(--color-mustard);
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .serviceItem {
+    padding: 2rem;
+  }
+}

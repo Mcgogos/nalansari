@@ -1,0 +1,148 @@
+.section {
+  padding: 8rem 0;
+  background-color: var(--color-deep-black);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  color: var(--color-warm-white);
+  text-align: center;
+  margin-bottom: 4rem;
+  letter-spacing: 0.05em;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 300px;
+  gap: 1rem;
+  margin-bottom: 4rem;
+}
+
+.gridItem {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  background-color: var(--color-charcoal);
+  cursor: pointer;
+}
+
+/* Specific item placement for Masonry look */
+.itemLarge {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.itemVertical {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+.itemQuote {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+  background-color: var(--color-charcoal);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(212, 167, 44, 0.6); /* Mustard overlay */
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gridItem:not(.itemQuote):hover .media {
+  transform: scale(1.05);
+}
+
+.gridItem:not(.itemQuote):hover .overlay {
+  opacity: 1;
+}
+
+.instagramIcon {
+  color: var(--color-deep-black);
+  transform: translateY(20px);
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.gridItem:hover .instagramIcon {
+  transform: translateY(0);
+}
+
+.quoteText {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--color-warm-white);
+  letter-spacing: 0.05em;
+  line-height: 1.4;
+}
+
+.quoteText span {
+  color: var(--color-mustard);
+}
+
+.ctaContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.ctaButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-deep-black);
+  background-color: var(--color-mustard);
+  padding: 1rem 2.5rem;
+  border-radius: 2px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.ctaButton:hover {
+  background-color: #e5b634;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 250px;
+  }
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    aspect-ratio: 1/1; /* Roughly make items square on mobile */
+  }
+  
+  .gridItem {
+    aspect-ratio: 1/1;
+  }
+  
+  .itemLarge, .itemVertical {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+}

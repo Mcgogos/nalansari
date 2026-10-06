@@ -1,0 +1,168 @@
+.section {
+  padding: 8rem 0;
+  background-color: var(--color-deep-black);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  color: var(--color-warm-white);
+  text-align: center;
+  margin-bottom: 5rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.cardsContainer {
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+}
+
+.card {
+  flex: 1;
+  position: relative;
+  height: 500px;
+  background-color: var(--color-charcoal);
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 3rem 2rem;
+  cursor: pointer;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.5s ease;
+}
+
+.cardImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.1);
+  transition: opacity 0.5s ease, transform 1s cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: 1;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(10, 10, 10, 0.95) 0%, rgba(10, 10, 10, 0.2) 100%);
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.content {
+  position: relative;
+  z-index: 3;
+}
+
+.mustardLine {
+  width: 0;
+  height: 2px;
+  background-color: var(--color-mustard);
+  margin-bottom: 1.5rem;
+  transition: width 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.cardTitle {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  color: var(--color-warm-white);
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.05em;
+}
+
+.cardDesc {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--color-soft-gray);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Hover States handled by parent group */
+.cardsContainer:hover .card {
+  opacity: 0.4;
+}
+
+.cardsContainer .card:hover {
+  opacity: 1;
+  transform: scale(1.05);
+  z-index: 10;
+}
+
+.card:hover .cardImage,
+.card:hover .overlay {
+  opacity: 1;
+}
+
+.card:hover .cardImage {
+  transform: scale(1);
+}
+
+.card:hover .mustardLine {
+  width: 50px;
+}
+
+.card:hover .cardTitle {
+  color: var(--color-warm-white);
+}
+
+.card:hover .cardDesc {
+  color: var(--color-warm-white);
+}
+
+@media (max-width: 1024px) {
+  .cardsContainer {
+    flex-direction: column;
+  }
+  
+  .card {
+    height: 350px;
+  }
+  
+  .cardImage, .overlay {
+    opacity: 0.4;
+  }
+  
+  .mustardLine {
+    width: 50px;
+  }
+  
+  .cardsContainer:hover .card {
+    opacity: 1;
+  }
+  
+  .cardsContainer .card:hover {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  /* Horizontal swipe for mobile */
+  .cardsContainer {
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .cardsContainer::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .card {
+    min-width: 85vw;
+    scroll-snap-align: center;
+  }
+}

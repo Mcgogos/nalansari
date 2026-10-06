@@ -1,0 +1,116 @@
+.section {
+  padding: 6rem 0;
+  background-color: var(--color-charcoal);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  color: var(--color-warm-white);
+  text-align: center;
+  margin-bottom: 3rem;
+  letter-spacing: 0.05em;
+}
+
+.optionsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.optionBtn {
+  padding: 1rem 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  color: var(--color-warm-white);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.optionBtn:hover {
+  border-color: var(--color-mustard);
+  color: var(--color-mustard);
+}
+
+.optionBtn.active {
+  background-color: var(--color-mustard);
+  border-color: var(--color-mustard);
+  color: var(--color-deep-black);
+  font-weight: 600;
+}
+
+.resultArea {
+  margin-top: 4rem;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+  pointer-events: none;
+}
+
+.resultArea.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.resultTitle {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: var(--color-soft-gray);
+  margin-bottom: 2rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.recommendations {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.recCard {
+  background-color: var(--color-deep-black);
+  padding: 2rem;
+  border-radius: 4px;
+  min-width: 200px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.recCard:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-mustard);
+}
+
+.recTitle {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--color-warm-white);
+  letter-spacing: 0.05em;
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-deep-black);
+  background-color: var(--color-mustard);
+  padding: 1rem 2rem;
+  border-radius: 2px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.ctaButton:hover {
+  background-color: #e5b634;
+  transform: translateY(-2px);
+}

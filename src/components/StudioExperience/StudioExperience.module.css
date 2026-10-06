@@ -1,0 +1,133 @@
+.section {
+  padding: 8rem 0;
+  background-color: var(--color-deep-black);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  color: var(--color-warm-white);
+  text-align: center;
+  margin-bottom: 4rem;
+  letter-spacing: 0.05em;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  min-height: 500px;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.image {
+  position: absolute;
+  top: -10%;
+  left: 0;
+  width: 100%;
+  height: 120%; /* Extra height for parallax */
+  object-fit: cover;
+  transition: transform 0.1s ease-out;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 10, 0.4);
+  pointer-events: none;
+}
+
+.hotspot {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: var(--color-mustard);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-deep-black);
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  transition: transform 0.3s ease;
+  z-index: 10;
+}
+
+.hotspot::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--color-mustard);
+  opacity: 0.5;
+  animation: pulse 2s infinite;
+  z-index: -1;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+.hotspot:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.infoCard {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background-color: var(--color-deep-black);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1rem 1.5rem;
+  min-width: 200px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.hotspot:hover .infoCard {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
+}
+
+.infoTitle {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: var(--color-warm-white);
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.05em;
+}
+
+.infoDesc {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--color-soft-gray);
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .imageWrapper {
+    height: 60vh;
+  }
+  
+  .infoCard {
+    min-width: 150px;
+    padding: 0.75rem 1rem;
+  }
+}

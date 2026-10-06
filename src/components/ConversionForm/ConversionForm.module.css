@@ -1,0 +1,218 @@
+.section {
+  padding: 8rem 0;
+  background-color: var(--color-deep-black);
+}
+
+.formContainer {
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: var(--color-charcoal);
+  padding: 4rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  color: var(--color-warm-white);
+  margin-bottom: 1rem;
+  letter-spacing: 0.05em;
+}
+
+.subtitle {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-soft-gray);
+}
+
+.progressContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.progressLine {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 2px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  z-index: 1;
+}
+
+.progressActiveLine {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 2px;
+  background-color: var(--color-mustard);
+  z-index: 2;
+  transition: width 0.3s ease;
+}
+
+.progressDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--color-deep-black);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  z-index: 3;
+  transition: all 0.3s ease;
+}
+
+.progressDot.active {
+  border-color: var(--color-mustard);
+  background-color: var(--color-mustard);
+}
+
+.progressDot.completed {
+  border-color: var(--color-mustard);
+  background-color: var(--color-deep-black);
+}
+
+.stepTitle {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--color-mustard);
+  margin-bottom: 2rem;
+  text-align: center;
+  letter-spacing: 0.05em;
+}
+
+.optionsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.optionBtn {
+  padding: 1rem;
+  background-color: var(--color-deep-black);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  color: var(--color-warm-white);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.optionBtn:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.optionBtn.selected {
+  border-color: var(--color-mustard);
+  background-color: rgba(212, 167, 44, 0.1);
+  color: var(--color-mustard);
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.input {
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--color-deep-black);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  color: var(--color-warm-white);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--color-mustard);
+}
+
+textarea.input {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.navButtons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+}
+
+.backBtn {
+  padding: 1rem 2rem;
+  color: var(--color-soft-gray);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.backBtn:hover {
+  color: var(--color-warm-white);
+}
+
+.nextBtn, .submitBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background-color: var(--color-mustard);
+  color: var(--color-deep-black);
+  font-weight: 600;
+  border-radius: 2px;
+  margin-left: auto;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.nextBtn:hover, .submitBtn:hover {
+  background-color: #e5b634;
+  transform: translateY(-2px);
+}
+
+.nextBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.successMessage {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.successTitle {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  color: var(--color-mustard);
+  margin-bottom: 1rem;
+  letter-spacing: 0.05em;
+}
+
+.successDesc {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-warm-white);
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .formContainer {
+    padding: 2rem 1.5rem;
+  }
+  
+  .optionsGrid {
+    grid-template-columns: 1fr;
+  }
+}
