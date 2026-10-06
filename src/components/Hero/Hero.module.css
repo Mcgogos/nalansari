@@ -47,10 +47,11 @@
 
 .title {
   font-family: var(--font-display);
-  font-size: clamp(4rem, 10vw, 8rem);
-  line-height: 0.9;
+  font-size: clamp(48px, 6vw, 72px);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
   color: var(--color-warm-white);
-  text-transform: uppercase;
   margin-bottom: 1.5rem;
 }
 

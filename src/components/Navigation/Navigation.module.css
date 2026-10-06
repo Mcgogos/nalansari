@@ -47,7 +47,6 @@
 .navLink {
   font-size: 0.9rem;
   font-weight: 500;
-  letter-spacing: 0.05em;
   color: var(--color-warm-white);
   opacity: 0.8;
   transition: opacity 0.3s ease, color 0.3s ease;

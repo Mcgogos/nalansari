@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import { DM_Sans, Montserrat } from "next/font/google";
+import { Inter } from "next/font/google";
 import { LanguageProvider } from "@/context/LanguageContext";
 import "./globals.css";
 
-const dmSans = DM_Sans({ subsets: ["latin"], variable: "--font-inter", weight: ["400", "500"] });
-const montserrat = Montserrat({ subsets: ["latin"], variable: "--font-display", weight: ["400", "500", "600", "700"] });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter", weight: ["400", "500", "600", "700"] });
 
 export const metadata: Metadata = {
   title: "Nalan Sarı Pilates & Fitness | Pilates, Fitness ve Personal Training",
@@ -18,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="tr">
-      <body className={`${dmSans.variable} ${montserrat.variable}`}>
+      <body className={inter.variable}>
         <LanguageProvider>
           {children}
         </LanguageProvider>
