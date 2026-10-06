@@ -277,6 +277,9 @@ export const dictionaries = {
     'ig.quote.p5': '.',
     'ig.cta': 'EXPLORE INSTAGRAM',
 
+    // WhatsApp
+    'wa.defaultMessage': 'Hello, I would like to get information about your studio and classes.',
+
     // Conversion Form
     'form.title': 'PLAN YOUR FIRST CLASS',
     'form.subtitle': 'Let\'s find the best program for you.',
