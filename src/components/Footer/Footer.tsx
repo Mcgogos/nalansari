@@ -22,20 +22,20 @@ export default function Footer() {
           </div>
           
           <div className={styles.footerNav}>
-            <Link href="#movements" className={styles.footerLink}>{t('nav.services')}</Link>
-            <Link href="#schedule" className={styles.footerLink}>{t('nav.schedule')}</Link>
-            <Link href="#about" className={styles.footerLink}>{t('nav.about')}</Link>
-            <Link href="#trainers" className={styles.footerLink}>{t('nav.trainers')}</Link>
+            <Link href="#movements" className={`nav-link ${styles.footerLink}`}>{t('nav.services')}</Link>
+            <Link href="#schedule" className={`nav-link ${styles.footerLink}`}>{t('nav.schedule')}</Link>
+            <Link href="#about" className={`nav-link ${styles.footerLink}`}>{t('nav.about')}</Link>
+            <Link href="#trainers" className={`nav-link ${styles.footerLink}`}>{t('nav.trainers')}</Link>
           </div>
           
           <div className={styles.footerNav}>
-            <Link href="https://www.instagram.com/ns.fithouse.pilates.fitness?stkn=emo0Nnd5YWZraGJr" className={styles.footerLink} target="_blank" rel="noopener noreferrer">Instagram</Link>
-            <Link href={`https://wa.me/905444798807?text=${encodeURIComponent(t('wa.defaultMessage'))}`} className={styles.footerLink}>WhatsApp</Link>
-            <Link href="#contact" className={styles.footerLink}>{t('loc.contact.label')}</Link>
+            <Link href="https://www.instagram.com/ns.fithouse.pilates.fitness?stkn=emo0Nnd5YWZraGJr" className={`nav-link ${styles.footerLink}`} target="_blank" rel="noopener noreferrer">Instagram</Link>
+            <Link href={`https://wa.me/905444798807?text=${encodeURIComponent(t('wa.defaultMessage'))}`} className={`nav-link ${styles.footerLink}`}>WhatsApp</Link>
+            <Link href="#contact" className={`nav-link ${styles.footerLink}`}>{t('loc.contact.label')}</Link>
           </div>
         </div>
         
-        <div className={styles.bottomBar}>
+        <div className={`text-caption ${styles.bottomBar}`}>
           <p>&copy; {new Date().getFullYear()} Nalan Sarı Pilates & Fitness. {t('footer.rights')}</p>
           <p>{t('footer.created')}</p>
         </div>

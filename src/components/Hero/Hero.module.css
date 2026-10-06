@@ -46,31 +46,31 @@
 }
 
 .title {
-  font-family: var(--font-display);
-  font-size: clamp(48px, 6vw, 72px);
-  font-weight: 500;
-  line-height: 1.1;
-  letter-spacing: -0.03em;
+
+
+
+
+
   color: var(--color-warm-white);
   margin-bottom: 1.5rem;
 }
 
 .subtitle {
-  font-family: var(--font-body);
-  font-size: clamp(1rem, 2vw, 1.25rem);
+
+
   color: var(--color-mustard);
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
+
+
+
   margin-bottom: 1rem;
 }
 
 .description {
-  font-family: var(--font-body);
-  font-size: clamp(1rem, 2vw, 1.15rem);
+
+
   color: var(--color-warm-white);
   opacity: 0.8;
-  line-height: 1.6;
+
   margin-bottom: 3rem;
   max-width: 500px;
 }
@@ -86,8 +86,8 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  font-size: 1rem;
-  font-weight: 600;
+
+
   color: var(--color-deep-black);
   background-color: var(--color-mustard);
   padding: 1rem 2rem;
@@ -117,8 +117,8 @@
 }
 
 .secondaryCta {
-  font-size: 1rem;
-  font-weight: 500;
+
+
   color: var(--color-warm-white);
   position: relative;
   padding-bottom: 4px;

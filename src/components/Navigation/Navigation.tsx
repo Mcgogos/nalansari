@@ -55,7 +55,7 @@ export default function Navigation() {
         {/* Desktop Menu */}
         <div className={styles.desktopMenu}>
           {navLinks.map((link) => (
-            <Link key={link.href} href={link.href} className={styles.navLink}>
+            <Link key={link.href} href={link.href} className={`nav-link ${styles.navLink}`}>
               {t(link.labelKey)}
             </Link>
           ))}

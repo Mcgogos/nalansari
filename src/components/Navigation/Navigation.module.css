@@ -24,12 +24,12 @@
 }
 
 .logo {
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
+
+
+
+
   color: var(--color-warm-white);
-  text-transform: uppercase;
+
 }
 
 .logoImage {
@@ -45,8 +45,8 @@
 }
 
 .navLink {
-  font-size: 0.9rem;
-  font-weight: 500;
+
+
   color: var(--color-warm-white);
   opacity: 0.8;
   transition: opacity 0.3s ease, color 0.3s ease;
@@ -62,8 +62,8 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 0.9rem;
-  font-weight: 600;
+
+
   color: var(--color-deep-black);
   background-color: var(--color-mustard);
   padding: 0.75rem 1.5rem;
@@ -127,11 +127,11 @@
 }
 
 .mobileNavLink {
-  font-family: var(--font-display);
-  font-size: 3rem;
+
+
   color: var(--color-warm-white);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+
+
   transition: color 0.3s ease;
 }
 
@@ -160,9 +160,9 @@
   background: transparent;
   border: none;
   color: var(--color-soft-gray);
-  font-family: var(--font-body);
-  font-size: 0.85rem;
-  font-weight: 600;
+
+
+
   cursor: pointer;
   transition: color 0.3s ease;
 }
@@ -173,7 +173,7 @@
 
 .langDivider {
   color: var(--color-soft-gray);
-  font-size: 0.85rem;
+
 }
 
 @media (max-width: 768px) {

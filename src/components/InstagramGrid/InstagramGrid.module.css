@@ -4,12 +4,12 @@
 }
 
 .title {
-  font-family: var(--font-display);
-  font-size: clamp(3rem, 5vw, 4.5rem);
+
+
   color: var(--color-warm-white);
   text-align: center;
   margin-bottom: 4rem;
-  letter-spacing: 0.05em;
+
 }
 
 .grid {
@@ -89,11 +89,11 @@
 }
 
 .quoteText {
-  font-family: var(--font-display);
-  font-size: 1.5rem;
+
+
   color: var(--color-warm-white);
-  letter-spacing: 0.05em;
-  line-height: 1.4;
+
+
 }
 
 .quoteText span {
@@ -109,8 +109,8 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 0.9rem;
-  font-weight: 600;
+
+
   color: var(--color-deep-black);
   background-color: var(--color-mustard);
   padding: 1rem 2.5rem;

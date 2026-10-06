@@ -4,12 +4,12 @@
 }
 
 .title {
-  font-family: var(--font-display);
-  font-size: clamp(3rem, 5vw, 4.5rem);
+
+
   color: var(--color-warm-white);
   text-align: center;
   margin-bottom: 4rem;
-  letter-spacing: 0.05em;
+
 }
 
 .imageWrapper {
@@ -51,8 +51,8 @@
   align-items: center;
   justify-content: center;
   color: var(--color-deep-black);
-  font-family: var(--font-display);
-  font-size: 0.8rem;
+
+
   cursor: pointer;
   transform: translate(-50%, -50%);
   transition: transform 0.3s ease;
@@ -107,18 +107,18 @@
 }
 
 .infoTitle {
-  font-family: var(--font-display);
-  font-size: 1.25rem;
+
+
   color: var(--color-warm-white);
   margin-bottom: 0.5rem;
-  letter-spacing: 0.05em;
+
 }
 
 .infoDesc {
-  font-family: var(--font-body);
-  font-size: 0.85rem;
+
+
   color: var(--color-soft-gray);
-  line-height: 1.4;
+
 }
 
 @media (max-width: 768px) {

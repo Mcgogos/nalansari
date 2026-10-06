@@ -69,9 +69,9 @@ export default function Hero() {
       
       <div className={`container ${styles.content}`}>
         <div className={styles.textContent} ref={textRef}>
-          <h2 className={styles.subtitle}>{t('hero.subtitle')}</h2>
-          <h1 className={styles.title} dangerouslySetInnerHTML={{ __html: t('hero.title') }}></h1>
-          <p className={styles.description}>
+          <p className={`text-lg ${styles.subtitle}`}>{t('hero.subtitle')}</p>
+          <h1 className={`display-text ${styles.title}`} dangerouslySetInnerHTML={{ __html: t('hero.title') }}></h1>
+          <p className={`text-lg ${styles.description}`}>
             {t('hero.desc')}
           </p>
           

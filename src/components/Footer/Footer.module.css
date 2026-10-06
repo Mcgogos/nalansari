@@ -4,12 +4,12 @@
 }
 
 .title {
-  font-family: var(--font-display);
-  font-size: clamp(3rem, 5vw, 4.5rem);
+
+
   color: var(--color-warm-white);
   text-align: center;
   margin-bottom: 4rem;
-  letter-spacing: 0.05em;
+
 }
 
 .locationGrid {
@@ -24,19 +24,19 @@
 }
 
 .infoLabel {
-  font-family: var(--font-body);
-  font-size: 0.85rem;
+
+
   color: var(--color-mustard);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+
+
   margin-bottom: 0.5rem;
 }
 
 .infoText {
-  font-family: var(--font-body);
-  font-size: 1.1rem;
+
+
   color: var(--color-warm-white);
-  line-height: 1.6;
+
 }
 
 .mapContainer {
@@ -56,13 +56,13 @@
 }
 
 .footerBigText {
-  font-family: var(--font-display);
-  font-size: clamp(4rem, 10vw, 9rem);
+
+
   color: var(--color-warm-white);
-  line-height: 0.85;
+
   text-align: center;
   margin-bottom: 6rem;
-  letter-spacing: 0.02em;
+
 }
 
 .footerBigText span {
@@ -81,18 +81,18 @@
 }
 
 .brandName {
-  font-family: var(--font-display);
-  font-size: 2rem;
+
+
   color: var(--color-warm-white);
-  letter-spacing: 0.1em;
+
   margin-bottom: 0.5rem;
 }
 
 .brandDesc {
-  font-family: var(--font-body);
-  font-size: 0.9rem;
+
+
   color: var(--color-soft-gray);
-  letter-spacing: 0.1em;
+
 }
 
 .footerNav {
@@ -102,11 +102,11 @@
 }
 
 .footerLink {
-  font-family: var(--font-body);
-  font-size: 0.9rem;
+
+
   color: var(--color-warm-white);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+
+
   transition: color 0.3s ease;
 }
 
@@ -120,8 +120,8 @@
   align-items: center;
   padding-top: 2rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  font-family: var(--font-body);
-  font-size: 0.8rem;
+
+
   color: var(--color-soft-gray);
 }
 

@@ -25,8 +25,8 @@ export default function BrandStory() {
           </p>
           
           <div className={styles.founderInfo}>
-            <span className={styles.name}>Nalan Sarı</span>
-            <span className={styles.role}>Founder / Instructor</span>
+            <span className={`text-lg ${styles.name}`}>Nalan Sarı</span>
+            <span className={`text-caption ${styles.role}`}>Founder / Instructor</span>
           </div>
         </div>
       </div>

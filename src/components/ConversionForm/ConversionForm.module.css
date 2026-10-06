@@ -18,16 +18,16 @@
 }
 
 .title {
-  font-family: var(--font-display);
-  font-size: 2.5rem;
+
+
   color: var(--color-warm-white);
   margin-bottom: 1rem;
-  letter-spacing: 0.05em;
+
 }
 
 .subtitle {
-  font-family: var(--font-body);
-  font-size: 1rem;
+
+
   color: var(--color-soft-gray);
 }
 
@@ -82,12 +82,12 @@
 }
 
 .stepTitle {
-  font-family: var(--font-display);
-  font-size: 1.5rem;
+
+
   color: var(--color-mustard);
   margin-bottom: 2rem;
   text-align: center;
-  letter-spacing: 0.05em;
+
 }
 
 .optionsGrid {
@@ -102,8 +102,8 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 4px;
   color: var(--color-warm-white);
-  font-family: var(--font-body);
-  font-size: 1rem;
+
+
   text-align: center;
   transition: all 0.3s ease;
 }
@@ -131,8 +131,8 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 4px;
   color: var(--color-warm-white);
-  font-family: var(--font-body);
-  font-size: 1rem;
+
+
   transition: border-color 0.3s ease;
 }
 
@@ -155,7 +155,7 @@ textarea.input {
 .backBtn {
   padding: 1rem 2rem;
   color: var(--color-soft-gray);
-  font-weight: 500;
+
   transition: color 0.3s ease;
 }
 
@@ -170,7 +170,7 @@ textarea.input {
   padding: 1rem 2rem;
   background-color: var(--color-mustard);
   color: var(--color-deep-black);
-  font-weight: 600;
+
   border-radius: 2px;
   margin-left: auto;
   transition: background-color 0.3s ease, transform 0.3s ease;
@@ -193,18 +193,18 @@ textarea.input {
 }
 
 .successTitle {
-  font-family: var(--font-display);
-  font-size: 2.5rem;
+
+
   color: var(--color-mustard);
   margin-bottom: 1rem;
-  letter-spacing: 0.05em;
+
 }
 
 .successDesc {
-  font-family: var(--font-body);
-  font-size: 1rem;
+
+
   color: var(--color-warm-white);
-  line-height: 1.5;
+
 }
 
 @media (max-width: 768px) {

@@ -5,12 +5,12 @@
 }
 
 .title {
-  font-family: var(--font-display);
-  font-size: clamp(2.5rem, 5vw, 4rem);
+
+
   color: var(--color-warm-white);
   text-align: center;
   margin-bottom: 5rem;
-  letter-spacing: 0.05em;
+
 }
 
 .testimonialsWrapper {
@@ -33,12 +33,12 @@
 }
 
 .quoteText {
-  font-family: var(--font-display);
-  font-size: clamp(1.5rem, 3vw, 2.5rem);
+
+
   color: var(--color-warm-white);
-  line-height: 1.4;
+
   margin-bottom: 3rem;
-  letter-spacing: 0.02em;
+
 }
 
 .authorInfo {
@@ -55,19 +55,19 @@
 }
 
 .authorName {
-  font-family: var(--font-body);
-  font-size: 1rem;
-  font-weight: 600;
+
+
+
   color: var(--color-warm-white);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+
+
   margin-bottom: 0.25rem;
 }
 
 .program {
-  font-family: var(--font-body);
-  font-size: 0.85rem;
+
+
   color: var(--color-soft-gray);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+
+
 }
