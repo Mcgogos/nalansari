@@ -1,82 +1,80 @@
 .splashContainer {
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #050505;
+  background: radial-gradient(ellipse at center, #111008 0%, #050505 70%);
   z-index: 9999;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   overflow: hidden;
 }
 
+/* ── 3D Canvas ── */
 .canvasContainer {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   z-index: 1;
-  opacity: 0;
-  transform: scale(0.85);
 }
 
-.textContainer {
+/* ── Center Content ── */
+.centerContent {
   position: relative;
   z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 0;
   pointer-events: none;
+  /* Subtle soft glow behind the text block */
+  filter: drop-shadow(0 0 60px rgba(212, 167, 44, 0.25));
 }
 
+/* ── Big NS Logo ── */
+.logoMark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.nsSvg {
+  width: 240px;
+  height: auto;
+  overflow: visible;
+  filter: drop-shadow(0 0 24px rgba(212, 167, 44, 0.6));
+}
+
+/* ── Divider ── */
+.dividerLine {
+  width: 160px;
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent, #D4A72C, transparent);
+  transform-origin: center;
+  margin-bottom: 1.5rem;
+}
+
+/* ── Title ── */
 .title {
-
-
-  color: var(--color-warm-white);
-
-  margin: 0;
-  opacity: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1.75rem, 5vw, 2.75rem);
+  font-weight: 300;
+  letter-spacing: 0.55em;
+  margin-right: -0.55em; /* optical compensation */
+  color: #F3F0E8;
+  margin-bottom: 0.75rem;
   text-align: center;
-
-
-  margin-right: -0.5em; /* Compensate for letter spacing */
 }
 
+/* ── Subtitle ── */
 .subtitle {
-
-
-  color: var(--color-warm-white);
-
-  opacity: 0;
-  margin-top: 1rem;
-
-
-}
-
-.mustardLine {
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0%;
-  height: 1px;
-  background-color: var(--color-mustard);
-  opacity: 0;
-}
-
-/* Very thin mustard line at the beginning */
-.initialLine {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 0%;
-  height: 1px;
-  background-color: var(--color-mustard);
-  z-index: 3;
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(0.6rem, 1.5vw, 0.8rem);
+  font-weight: 400;
+  letter-spacing: 0.35em;
+  color: #D4A72C;
+  text-align: center;
+  text-transform: uppercase;
 }

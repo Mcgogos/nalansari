@@ -49,7 +49,24 @@ export default function Navigation() {
     <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ''}`}>
       <div className={`container ${styles.container}`}>
         <Link href="/" className={styles.logo} onClick={closeMenu}>
-          {/* eslint-disable-next-line @next/next/no-img-element */} <img src="/logo.png" alt="Nalan Sarı" className={styles.logoImage} />
+          <svg viewBox="0 0 200 110" xmlns="http://www.w3.org/2000/svg" className={styles.nsLogo}>
+            {/* N – outline: mustard stroke, black fill */}
+            <text x="4" y="96"
+              fontFamily="'Inter', system-ui, sans-serif"
+              fontSize="100"
+              fontWeight="700"
+              fill="#0A0A0A"
+              stroke="#D4A72C"
+              strokeWidth="5"
+            >N</text>
+            {/* S – fully solid mustard */}
+            <text x="100" y="96"
+              fontFamily="'Inter', system-ui, sans-serif"
+              fontSize="100"
+              fontWeight="700"
+              fill="#D4A72C"
+            >S</text>
+          </svg>
         </Link>
 
         {/* Desktop Menu */}

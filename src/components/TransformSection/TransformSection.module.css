@@ -1,0 +1,21 @@
+.section {
+  background-color: var(--color-deep-black);
+  overflow: hidden;
+}
+
+.sideBySide {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 80vh;
+}
+
+.panel {
+  /* Each child section fills the half-panel */
+  overflow: hidden;
+}
+
+@media (max-width: 900px) {
+  .sideBySide {
+    grid-template-columns: 1fr;
+  }
+}

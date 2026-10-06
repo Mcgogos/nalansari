@@ -5,7 +5,7 @@ import { useLanguage } from '@/context/LanguageContext';
 import { ChevronsLeftRight } from 'lucide-react';
 /* eslint-disable @next/next/no-img-element */
 
-export default function BeforeAfterSlider() {
+export default function BeforeAfterSlider({ embedded = false }: { embedded?: boolean }) {
   const { language } = useLanguage();
   const [sliderPosition, setSliderPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
@@ -48,7 +48,7 @@ export default function BeforeAfterSlider() {
   }, [isDragging]);
 
   return (
-    <section className={styles.section}>
+    <section className={embedded ? styles.sectionEmbedded : styles.section}>
       <div className={`container ${styles.container}`}>
         
         <div className={styles.header}>

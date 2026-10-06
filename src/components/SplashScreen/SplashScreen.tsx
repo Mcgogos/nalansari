@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React, { useEffect, useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
@@ -6,160 +6,196 @@ import * as THREE from 'three';
 import gsap from 'gsap';
 import styles from './SplashScreen.module.css';
 
-const LogoShape = () => {
-  const meshRef = useRef<THREE.Mesh>(null);
-  const texture = React.useMemo(() => new THREE.TextureLoader().load('/logo.png'), []);
-  
-  useFrame((state, delta) => {
-    if (meshRef.current) {
-      meshRef.current.rotation.y += delta * 1.5;
-      meshRef.current.rotation.x = Math.sin(state.clock.elapsedTime) * 0.2;
+// ─── Floating Particle Ring ───────────────────────────────────────────────────
+const ParticleRing = () => {
+  const pointsRef = useRef<THREE.Points>(null);
+
+  const geometry = React.useMemo(() => {
+    const geo = new THREE.BufferGeometry();
+    const count = 800;
+    const positions = new Float32Array(count * 3);
+    for (let i = 0; i < count; i++) {
+      const angle = (i / count) * Math.PI * 2;
+      const radius = 2.8 + Math.random() * 0.6;
+      const spread = (Math.random() - 0.5) * 0.5;
+      positions[i * 3]     = Math.cos(angle) * radius + spread;
+      positions[i * 3 + 1] = (Math.random() - 0.5) * 1.5;
+      positions[i * 3 + 2] = Math.sin(angle) * radius + spread;
+    }
+    geo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    return geo;
+  }, []);
+
+  useFrame((state) => {
+    if (pointsRef.current) {
+      pointsRef.current.rotation.y = state.clock.elapsedTime * 0.12;
+      pointsRef.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.2) * 0.1;
     }
   });
 
   return (
-    <mesh ref={meshRef}>
-      <planeGeometry args={[2.5, 2.5]} />
-      <meshStandardMaterial 
-        map={texture}
-        transparent={true}
-        roughness={0.4} 
-        metalness={0.6}
-        side={THREE.DoubleSide}
+    <points ref={pointsRef} geometry={geometry}>
+      <pointsMaterial color="#D4A72C" size={0.018} sizeAttenuation transparent opacity={0.7} />
+    </points>
+  );
+};
+
+// ─── 3D Torus Knot (Gold Accent) ────────────────────────────────────────────
+const GoldKnot = () => {
+  const meshRef = useRef<THREE.Mesh>(null);
+
+  useFrame((state) => {
+    if (meshRef.current) {
+      meshRef.current.rotation.x = state.clock.elapsedTime * 0.25;
+      meshRef.current.rotation.y = state.clock.elapsedTime * 0.4;
+      const s = 1 + Math.sin(state.clock.elapsedTime * 0.8) * 0.06;
+      meshRef.current.scale.setScalar(s);
+    }
+  });
+
+  return (
+    <mesh ref={meshRef} position={[0, 0, 0]}>
+      <torusKnotGeometry args={[0.9, 0.22, 200, 20, 2, 3]} />
+      <meshStandardMaterial
+        color="#D4A72C"
+        metalness={0.95}
+        roughness={0.1}
+        emissive="#7A5A00"
+        emissiveIntensity={0.4}
       />
     </mesh>
   );
 };
 
-const Scene = () => {
-  return (
-    <>
-      {/* Warm soft fill light */}
-      <ambientLight intensity={0.5} color="#F3F0E8" />
-      <directionalLight position={[5, 5, 5]} intensity={1} color="#F3F0E8" />
-      
-      {/* Mustard Gold rim light */}
-      <spotLight 
-        position={[-5, 0, -5]} 
-        intensity={100} 
-        color="#D4A72C" 
-        angle={0.5} 
-        penumbra={1} 
-      />
-      <spotLight 
-        position={[5, -5, 2]} 
-        intensity={50} 
-        color="#D4A72C" 
-        angle={0.5} 
-        penumbra={1} 
-      />
+// ─── Scene ───────────────────────────────────────────────────────────────────
+const Scene = () => (
+  <>
+    <ambientLight intensity={0.3} color="#FFF5D6" />
+    <directionalLight position={[4, 8, 4]} intensity={2} color="#FFE580" />
+    <pointLight position={[-5, 3, -3]} intensity={60} color="#D4A72C" />
+    <pointLight position={[5, -3, 3]} intensity={40} color="#FF9500" />
+    <spotLight position={[0, 6, 0]} intensity={80} color="#FFFFFF" angle={0.4} penumbra={1} />
+    <GoldKnot />
+    <ParticleRing />
+  </>
+);
 
-      <LogoShape />
-    </>
-  );
-};
-
+// ─── Component ───────────────────────────────────────────────────────────────
 interface SplashScreenProps {
   onComplete: () => void;
 }
 
 export default function SplashScreen({ onComplete }: SplashScreenProps) {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const canvasRef = useRef<HTMLDivElement>(null);
-  const titleRef = useRef<HTMLHeadingElement>(null);
-  const subtitleRef = useRef<HTMLParagraphElement>(null);
-  const initialLineRef = useRef<HTMLDivElement>(null);
-  
+  const containerRef  = useRef<HTMLDivElement>(null);
+  const canvasRef     = useRef<HTMLDivElement>(null);
+  const logoRef       = useRef<HTMLDivElement>(null);
+  const titleRef      = useRef<HTMLHeadingElement>(null);
+  const subtitleRef   = useRef<HTMLParagraphElement>(null);
+  const lineRef       = useRef<HTMLDivElement>(null);
+
   const isWebGLSupported = typeof window !== 'undefined' ? (() => {
     try {
-      const canvas = document.createElement('canvas');
-      return !!(canvas.getContext('webgl2') || canvas.getContext('webgl'));
-    } catch {
-      return false;
-    }
+      const c = document.createElement('canvas');
+      return !!(c.getContext('webgl2') || c.getContext('webgl'));
+    } catch { return false; }
   })() : true;
 
   useEffect(() => {
     const isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const durationMultiplier = isReducedMotion ? 0.3 : 1;
 
-    const tl = gsap.timeline({
-      onComplete: () => {
-        onComplete();
-      }
-    });
+    const tl = gsap.timeline({ onComplete });
 
-    if (durationMultiplier < 1) {
-      // Fast fallback / revisit animation
-      tl.to(containerRef.current, { opacity: 0, duration: 1, delay: 0.5 });
-      return;
+    if (isReducedMotion) {
+      tl.to(containerRef.current, { opacity: 0, duration: 0.6, delay: 0.3 });
+      return () => { tl.kill(); };
     }
 
-    // Main 3.5s animation timeline
-    // 0.0 - 0.5s: Initial mustard line
-    tl.to(initialLineRef.current, {
-      width: '100px',
-      opacity: 1,
-      duration: 0.5,
-      ease: 'power2.inOut'
-    })
-    .to(initialLineRef.current, {
+    // Phase 1 – canvas burst in
+    tl.fromTo(canvasRef.current,
+      { opacity: 0, scale: 0.6, rotation: -15 },
+      { opacity: 1, scale: 1, rotation: 0, duration: 1.2, ease: 'back.out(1.2)' }
+    )
+    // Phase 2 – logo pops up with spring
+    .fromTo(logoRef.current,
+      { opacity: 0, scale: 0, rotation: -90 },
+      { opacity: 1, scale: 1, rotation: 0, duration: 1.0, ease: 'elastic.out(1, 0.55)' },
+      '-=0.5'
+    )
+    // Phase 3 – divider line draws in
+    .fromTo(lineRef.current,
+      { scaleX: 0, opacity: 0 },
+      { scaleX: 1, opacity: 1, duration: 0.5, ease: 'power2.out' },
+      '-=0.2'
+    )
+    // Phase 4 – title sweeps up
+    .fromTo(titleRef.current,
+      { opacity: 0, y: 30, filter: 'blur(8px)' },
+      { opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.7, ease: 'power3.out' },
+      '-=0.1'
+    )
+    // Phase 5 – subtitle fades
+    .fromTo(subtitleRef.current,
+      { opacity: 0, y: 16 },
+      { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' },
+      '-=0.3'
+    )
+    // Hold…
+    .to({}, { duration: 1.0 })
+    // Phase 6 – cinematic zoom-out & fade
+    .to(containerRef.current, {
       opacity: 0,
-      duration: 0.2
-    }, "+=0.1");
-
-    // 0.5 - 1.2s: Canvas reveal
-    tl.to(canvasRef.current, {
-      opacity: 1,
-      scale: 1,
-      duration: 1.5, // slightly longer for smooth feel
-      ease: 'power3.out'
-    }, "-=0.2");
-
-    // 2.1s: Text reveal
-    tl.to(titleRef.current, {
-      opacity: 1,
-      letterSpacing: '0.15em',
-      marginRight: '-0.15em',
-      duration: 1,
-      ease: 'power3.out'
-    }, "-=0.8");
-
-    tl.to(subtitleRef.current, {
-      opacity: 1,
+      scale: 1.08,
       duration: 0.8,
-      ease: 'power2.out'
-    }, "-=0.6");
-
-    // 3.1 - 3.7s: Fade out entire splash screen
-    tl.to(containerRef.current, {
-      opacity: 0,
-      duration: 0.6,
-      ease: 'power2.inOut',
-      delay: 0.5
+      ease: 'power2.inOut'
     });
 
-    return () => {
-      tl.kill();
-    };
+    return () => { tl.kill(); };
   }, [onComplete]);
 
   return (
     <div ref={containerRef} className={styles.splashContainer}>
-      <div ref={initialLineRef} className={styles.initialLine} />
-      
+      {/* 3D Canvas background */}
       {isWebGLSupported && (
         <div ref={canvasRef} className={styles.canvasContainer}>
-          <Canvas camera={{ position: [0, 0, 4], fov: 50 }}>
+          <Canvas camera={{ position: [0, 0, 5], fov: 50 }}>
             <Scene />
           </Canvas>
         </div>
       )}
 
-      <div className={styles.textContainer}>
+      {/* Central content */}
+      <div className={styles.centerContent}>
+        {/* Big NS logo */}
+        <div ref={logoRef} className={styles.logoMark}>
+          <svg viewBox="0 0 160 100" xmlns="http://www.w3.org/2000/svg" className={styles.nsSvg}>
+            {/* N – outline style: stroke mustard, fill transparent */}
+            <text x="4" y="88"
+              fontFamily="'Inter', sans-serif"
+              fontSize="90"
+              fontWeight="700"
+              fill="#0A0A0A"
+              stroke="#D4A72C"
+              strokeWidth="4"
+            >N</text>
+            {/* S – solid mustard */}
+            <text x="80" y="88"
+              fontFamily="'Inter', sans-serif"
+              fontSize="90"
+              fontWeight="700"
+              fill="#D4A72C"
+            >S</text>
+          </svg>
+        </div>
+
+        {/* Divider */}
+        <div ref={lineRef} className={styles.dividerLine} />
+
+        {/* Name */}
         <h1 ref={titleRef} className={styles.title}>NALAN SARI</h1>
+
+        {/* Tagline */}
         <p ref={subtitleRef} className={styles.subtitle}>
-          PILATES · FITNESS · WELLNESS
+          PILATES &nbsp;·&nbsp; FITNESS &nbsp;·&nbsp; WELLNESS
         </p>
       </div>
     </div>

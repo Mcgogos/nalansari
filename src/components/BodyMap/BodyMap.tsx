@@ -42,14 +42,14 @@ const ZONES_DATA: Record<BodyZone, { titleEn: string, titleTr: string, descEn: s
   }
 };
 
-export default function BodyMap() {
+export default function BodyMap({ embedded = false }: { embedded?: boolean }) {
   const { language } = useLanguage();
   const [activeZone, setActiveZone] = useState<BodyZone | null>(null);
 
   const activeData = activeZone ? ZONES_DATA[activeZone] : null;
 
   return (
-    <section className={styles.section} id="bodymap">
+    <section className={embedded ? styles.sectionEmbedded : styles.section} id="bodymap">
       <div className={`container ${styles.container}`}>
         
         <div className={styles.header}>
