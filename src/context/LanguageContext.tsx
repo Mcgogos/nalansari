@@ -29,7 +29,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   };
 
   const t = (key: TranslationKey): string => {
-    return dictionaries[language][key] || key;
+    return (dictionaries[language] as Record<string, string>)[key] || key;
   };
 
   // Prevent hydration mismatch by not rendering anything that depends on language until mounted
