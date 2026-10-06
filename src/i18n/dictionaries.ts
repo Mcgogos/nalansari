@@ -116,6 +116,9 @@ export const dictionaries = {
     'ig.quote.p5': '.',
     'ig.cta': "INSTAGRAM'I KEŞFET",
 
+    // WhatsApp
+    'wa.defaultMessage': 'Merhaba, stüdyonuz ve dersleriniz hakkında bilgi almak istiyorum.',
+
     // Conversion Form
     'form.title': 'İLK DERSİNİ PLANLA',
     'form.subtitle': 'Sana en uygun programı bulalım.',

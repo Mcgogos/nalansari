@@ -30,7 +30,7 @@ export default function Footer() {
           
           <div className={styles.footerNav}>
             <Link href="https://www.instagram.com/ns.fithouse.pilates.fitness?stkn=emo0Nnd5YWZraGJr" className={styles.footerLink} target="_blank" rel="noopener noreferrer">Instagram</Link>
-            <Link href="https://wa.me/905444798807" className={styles.footerLink}>WhatsApp</Link>
+            <Link href={`https://wa.me/905444798807?text=${encodeURIComponent(t('wa.defaultMessage'))}`} className={styles.footerLink}>WhatsApp</Link>
             <Link href="#contact" className={styles.footerLink}>{t('loc.contact.label')}</Link>
           </div>
         </div>

@@ -8,7 +8,7 @@ export default function FloatingWhatsApp() {
   const { t } = useLanguage();
   return (
     <Link 
-      href="https://wa.me/905444798807" 
+      href={`https://wa.me/905444798807?text=${encodeURIComponent(t('wa.defaultMessage'))}`} 
       target="_blank" 
       rel="noopener noreferrer"
       className={styles.floatingBtn}
