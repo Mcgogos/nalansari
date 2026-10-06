@@ -3,7 +3,7 @@
   inset: 0;
   width: 100vw;
   height: 100vh;
-  background: #050505;
+  background: #0A0A0A;
   z-index: 9999;
   display: flex;
   flex-direction: column;
@@ -12,115 +12,141 @@
   overflow: hidden;
 }
 
-/* ── Animated radial BG ── */
+/* ── Radial Glow Background ── */
 .bgGradient {
   position: absolute;
   inset: 0;
   opacity: 0;
   background:
-    radial-gradient(ellipse 70% 50% at 15% 50%, rgba(212,167,44,0.12) 0%, transparent 60%),
-    radial-gradient(ellipse 70% 50% at 85% 50%, rgba(212,167,44,0.10) 0%, transparent 60%),
-    radial-gradient(ellipse 100% 80% at 50% 50%, #0d0b02 0%, #050505 80%);
+    radial-gradient(ellipse 65% 50% at 20% 50%, rgba(234, 179, 8, 0.15) 0%, transparent 65%),
+    radial-gradient(ellipse 65% 50% at 80% 50%, rgba(234, 179, 8, 0.12) 0%, transparent 65%),
+    radial-gradient(ellipse 100% 90% at 50% 50%, #111111 0%, #0A0A0A 85%);
   pointer-events: none;
 }
 
-/* ── Subtle grid depth ── */
+/* ── Subtle Grid Lines ── */
 .gridLines {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(212,167,44,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(212,167,44,0.04) 1px, transparent 1px);
+    linear-gradient(rgba(234, 179, 8, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(234, 179, 8, 0.04) 1px, transparent 1px);
   background-size: 60px 60px;
   pointer-events: none;
   mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black, transparent);
 }
 
-/* ── Letters Row ── */
-.lettersRow {
+/* ── Name Container (holds Nalan and Sarı inline) ── */
+.nameContainer {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: center;
   position: relative;
-  gap: 0;
+  gap: 1.5rem;
+  z-index: 2;
 }
 
-/* ── Each letter wrapper (letter + name below) ── */
-.letterWrap {
+/* ── Word Group (Letter + Suffix to its right) ── */
+.wordGroup {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
+  align-items: baseline;
   position: relative;
+  white-space: nowrap;
 }
 
-/* ── Letter SVGs ── */
-.letterSvg {
-  width: clamp(100px, 18vw, 200px);
-  height: auto;
-  overflow: visible;
-  filter: drop-shadow(0 0 40px rgba(212,167,44,0.25));
+.wordGroupS {
+  margin-left: 0.5rem;
 }
 
-.letterN {
-  filter: drop-shadow(0 0 30px rgba(243,240,232,0.15));
+/* ── Big Letter N (White, Georgia/Inter 900) ── */
+.bigLetterN {
+  font-family: Georgia, serif;
+  font-weight: 900;
+  font-size: clamp(4rem, 14vw, 9.5rem);
+  line-height: 0.9;
+  color: #FFFFFF;
+  text-shadow: 0 0 35px rgba(255, 255, 255, 0.3);
+  display: inline-block;
 }
 
-.letterS {
-  filter: drop-shadow(0 0 35px rgba(212,167,44,0.5));
+/* ── Suffix 'alan' (to the right of N) ── */
+.suffixAlan {
+  font-family: 'Inter', ui-sans-serif, sans-serif;
+  font-weight: 900;
+  font-size: clamp(3.2rem, 11vw, 7.5rem);
+  line-height: 0.9;
+  color: #FFFFFF;
+  letter-spacing: -0.04em;
+  display: inline-block;
+  overflow: hidden;
+  text-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
 }
 
-/* ── Impact flash at center ── */
+/* ── Big Letter S (Mustard #EAB308, Georgia 900) ── */
+.bigLetterS {
+  font-family: Georgia, serif;
+  font-weight: 900;
+  font-size: clamp(4rem, 14vw, 9.5rem);
+  line-height: 0.9;
+  color: #EAB308;
+  text-shadow: 0 0 40px rgba(234, 179, 8, 0.6);
+  display: inline-block;
+}
+
+/* ── Suffix 'arı' (to the right of S) ── */
+.suffixAri {
+  font-family: 'Inter', ui-sans-serif, sans-serif;
+  font-weight: 900;
+  font-size: clamp(3.2rem, 11vw, 7.5rem);
+  line-height: 0.9;
+  color: #EAB308;
+  letter-spacing: -0.04em;
+  display: inline-block;
+  overflow: hidden;
+  text-shadow: 0 0 30px rgba(234, 179, 8, 0.5);
+}
+
+/* ── Impact Flash ── */
 .impactFlash {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255,230,100,0.95) 0%, rgba(212,167,44,0.4) 50%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(234, 179, 8, 0.9) 40%, transparent 70%);
   pointer-events: none;
   z-index: 10;
+  box-shadow: 0 0 60px rgba(234, 179, 8, 0.9);
 }
 
-/* ── Name labels ── */
-.nameLabel {
-  font-family: var(--font-geist-sans), 'Inter', -apple-system, sans-serif;
-  font-size: clamp(1rem, 2.5vw, 1.75rem);
-  font-weight: 300;
-  letter-spacing: 0.4em;
-  margin-right: -0.4em;
-  color: #F3F0E8;
-  text-align: center;
-  white-space: nowrap;
-}
-
-.nameLabelYellow {
-  color: #D4A72C;
-}
-
-/* ── Tagline ── */
+/* ── Subtitle ── */
 .subtitle {
-  font-family: var(--font-geist-sans), 'Inter', -apple-system, sans-serif;
-  font-size: clamp(0.55rem, 1.3vw, 0.72rem);
-  font-weight: 400;
-  letter-spacing: 0.45em;
-  color: rgba(212,167,44,0.7);
+  font-family: 'Inter', ui-sans-serif, sans-serif;
+  font-size: clamp(0.7rem, 1.4vw, 0.9rem);
+  font-weight: 800;
+  letter-spacing: 0.35em;
+  color: #EAB308;
   text-align: center;
   text-transform: uppercase;
-  margin-top: 2.5rem;
+  margin-top: 3rem;
+  z-index: 2;
+  text-shadow: 0 0 15px rgba(234, 179, 8, 0.3);
 }
 
 @media (max-width: 600px) {
-  .lettersRow {
-    gap: 0;
+  .nameContainer {
+    gap: 0.75rem;
   }
-  .letterSvg {
-    width: 90px;
+  .bigLetterN, .bigLetterS {
+    font-size: 3.5rem;
   }
-  .nameLabel {
-    font-size: 0.9rem;
+  .suffixAlan, .suffixAri {
+    font-size: 2.8rem;
+  }
+  .subtitle {
     letter-spacing: 0.25em;
+    margin-top: 2rem;
   }
 }

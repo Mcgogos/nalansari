@@ -1,74 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
 :root {
   --color-deep-black: #0A0A0A;
-  --color-charcoal: #151515;
-  --color-mustard: #D4A72C;
-  --color-warm-white: #F3F0E8;
-  --color-soft-gray: #8A8A8A;
+  --color-charcoal: #141414;
+  --color-mustard: #EAB308;
+  --color-mustard-hover: #D4A017;
+  --color-mustard-bg: rgba(234, 179, 8, 0.15);
   
-  --font-sans: var(--font-geist-sans), 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-logo: Georgia, serif;
 
-  /* Typography Weights */
-  --weight-regular: 400;
-  --weight-medium: 500;
-  --weight-semibold: 600;
-  --weight-bold: 700;
-
-  /* Typography Scale - Desktop */
-  --text-display: 64px;
-  --text-h1: 48px;
-  --text-h2: 36px;
-  --text-h3: 24px;
-  --text-h4: 20px;
-  --text-body-lg: 18px;
-  --text-body: 16px;
-  --text-body-sm: 14px;
-  --text-caption: 12px;
-  --text-button: 15px;
-  --text-nav: 15px;
-  --text-label: 13px;
-
-  /* Line Heights */
-  --lh-display: 1.05;
-  --lh-h1: 1.1;
-  --lh-h2: 1.15;
-  --lh-h3: 1.2;
-  --lh-h4: 1.3;
-  --lh-body-lg: 1.6;
-  --lh-body: 1.55;
-  --lh-body-sm: 1.5;
-  --lh-caption: 1.4;
-
-  /* Letter Spacing */
-  --ls-display: -0.04em;
-  --ls-h1: -0.035em;
-  --ls-h2: -0.025em;
-  --ls-h3: -0.015em;
-  --ls-h4: 0em;
-  --ls-body-lg: -0.005em;
-  --ls-body: 0em;
-  --ls-button: -0.005em;
-  --ls-label: 0.02em;
+  /* Typography Scale */
+  --text-display: clamp(2.5rem, 6vw, 4.5rem); /* text-4xl md:text-6xl lg:text-7xl */
+  --text-h1: clamp(2.25rem, 5vw, 3.75rem);
+  --text-h2: clamp(1.875rem, 4vw, 3rem);     /* text-3xl md:text-5xl */
+  --text-h3: 1.25rem;                          /* text-xl */
+  --text-body: 1rem;                           /* text-base */
+  --text-body-sm: 0.875rem;                    /* text-sm */
+  --text-badge: 0.75rem;                       /* text-xs */
 
   --nav-height: 80px;
-}
-
-@media (max-width: 1024px) {
-  :root {
-    --text-display: 52px;
-    --text-h1: 40px;
-    --text-h2: 32px;
-  }
-}
-
-@media (max-width: 768px) {
-  :root {
-    --text-display: 40px;
-    --text-h1: 34px;
-    --text-h2: 28px;
-    --text-h3: 21px;
-  }
 }
 
 * {
@@ -77,111 +28,122 @@
   margin: 0;
 }
 
-html, body {
+html {
+  font-family: var(--font-sans);
+  background-color: var(--color-deep-black);
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
   max-width: 100vw;
   overflow-x: hidden;
   background-color: var(--color-deep-black);
-  color: var(--color-warm-white);
+  color: #ffffff;
   font-family: var(--font-sans);
-  font-weight: var(--weight-regular);
-  line-height: var(--lh-body);
-  font-size: var(--text-body);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  line-height: 1.6;
+  font-size: 1rem;
 }
 
-/* Typography Base Elements */
+/* ── Typography Scale & Weights ── */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-sans);
+  letter-spacing: -0.025em; /* tracking-tight */
   text-wrap: balance;
 }
 
-.display-text {
+/* 900 (black) for H1, H2, stat numbers */
+h1, .hero-h1 {
   font-size: var(--text-display);
-  font-weight: var(--weight-medium);
-  line-height: var(--lh-display);
-  letter-spacing: var(--ls-display);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.025em;
+  color: #ffffff;
 }
 
-h1 {
-  font-size: var(--text-h1);
-  font-weight: var(--weight-semibold);
-  line-height: var(--lh-h1);
-  letter-spacing: var(--ls-h1);
-}
-
-h2 {
+h2, .section-h2 {
   font-size: var(--text-h2);
-  font-weight: var(--weight-semibold);
-  line-height: var(--lh-h2);
-  letter-spacing: var(--ls-h2);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
 }
 
-h3 {
+/* 800 (extrabold) for H3 card titles, CTA buttons */
+h3, .card-h3 {
   font-size: var(--text-h3);
-  font-weight: var(--weight-semibold);
-  line-height: var(--lh-h3);
-  letter-spacing: var(--ls-h3);
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
 }
 
-h4 {
-  font-size: var(--text-h4);
-  font-weight: var(--weight-medium);
-  line-height: var(--lh-h4);
-  letter-spacing: var(--ls-h4);
-}
-
-p, span, div, li {
-  font-size: inherit;
-  line-height: inherit;
-  letter-spacing: inherit;
-}
-
-p {
+/* 400 (regular) for paragraphs with 70% opacity white */
+p, .body-text {
+  font-size: var(--text-body);
+  color: rgba(255, 255, 255, 0.70);
+  line-height: 1.625;
+  font-weight: 400;
   max-width: 70ch;
 }
 
-.text-lg {
-  font-size: var(--text-body-lg);
-  line-height: var(--lh-body-lg);
-  letter-spacing: var(--ls-body-lg);
-}
-
-.text-sm {
+.body-text-sm {
   font-size: var(--text-body-sm);
-  line-height: var(--lh-body-sm);
+  color: rgba(255, 255, 255, 0.60);
+  line-height: 1.5;
 }
 
-.text-caption {
-  font-size: var(--text-caption);
-  line-height: var(--lh-caption);
-  font-weight: var(--weight-medium);
+/* Stat numbers: 900 (black) in mustard */
+.stat-number {
+  font-size: 2.25rem; /* text-4xl */
+  font-weight: 900;
+  color: var(--color-mustard);
+  line-height: 1;
 }
 
-.btn, button, .cta-button {
-  font-size: var(--text-button);
-  font-weight: var(--weight-medium);
-  letter-spacing: var(--ls-button);
-  font-family: var(--font-sans);
-  cursor: pointer;
-  border: none;
-  background: none;
+/* Badge/Label: 700 (bold) uppercase with tracking-[0.2em] */
+.badge-label {
+  display: inline-block;
+  background-color: var(--color-mustard-bg);
+  color: var(--color-mustard);
+  font-size: var(--text-badge);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+}
+
+/* Buttons: 800 (extrabold) or 900 (black), rounded-full */
+.btn-primary, .btn, button.btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+  background-color: var(--color-mustard);
+  color: #000000;
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: 0.9375rem;
+  padding: 0.875rem 1.75rem;
+  border-radius: 9999px; /* rounded-full */
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
   line-height: 1;
+  text-decoration: none;
 }
 
-.nav-link {
-  font-size: var(--text-nav);
-  font-weight: var(--weight-medium);
+.btn-primary:hover, .btn:hover {
+  background-color: var(--color-mustard-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(234, 179, 8, 0.3);
 }
 
-.label {
-  font-size: var(--text-label);
-  font-weight: var(--weight-medium);
-  letter-spacing: var(--ls-label);
+/* Highlights */
+.text-mustard {
+  color: var(--color-mustard) !important;
 }
 
 a {
@@ -198,6 +160,6 @@ a {
 
 @media (max-width: 768px) {
   .container {
-    padding: 0 1.5rem;
+    padding: 0 1.25rem;
   }
 }
