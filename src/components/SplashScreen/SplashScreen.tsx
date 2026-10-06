@@ -6,23 +6,26 @@ import * as THREE from 'three';
 import gsap from 'gsap';
 import styles from './SplashScreen.module.css';
 
-const AbstractShape = () => {
+const LogoShape = () => {
   const meshRef = useRef<THREE.Mesh>(null);
+  const texture = React.useMemo(() => new THREE.TextureLoader().load('/logo.png'), []);
   
   useFrame((state, delta) => {
     if (meshRef.current) {
-      meshRef.current.rotation.y += delta * 0.2;
-      meshRef.current.rotation.x += delta * 0.1;
+      meshRef.current.rotation.y += delta * 1.5;
+      meshRef.current.rotation.x = Math.sin(state.clock.elapsedTime) * 0.2;
     }
   });
 
   return (
     <mesh ref={meshRef}>
-      <torusKnotGeometry args={[1.2, 0.4, 128, 32]} />
+      <planeGeometry args={[2.5, 2.5]} />
       <meshStandardMaterial 
-        color="#111111" 
-        roughness={0.7} 
-        metalness={0.2} 
+        map={texture}
+        transparent={true}
+        roughness={0.4} 
+        metalness={0.6}
+        side={THREE.DoubleSide}
       />
     </mesh>
   );
@@ -51,7 +54,7 @@ const Scene = () => {
         penumbra={1} 
       />
 
-      <AbstractShape />
+      <LogoShape />
     </>
   );
 };
