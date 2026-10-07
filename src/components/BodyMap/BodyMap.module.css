@@ -145,17 +145,26 @@
 }
 
 .ctaBtn {
-  background-color: var(--color-warm-white);
-  color: var(--color-deep-black);
+  background-color: #EAB308;
+  color: #000000;
+  font-weight: 800;
+  font-size: 1rem;
   padding: 1rem 2rem;
-  border-radius: 30px;
+  border-radius: 9999px;
   width: 100%;
   transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 .ctaBtn:hover {
-  background-color: var(--color-mustard);
+  background-color: #D4A017;
+  color: #000000;
   transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(234, 179, 8, 0.35);
 }
 
 .placeholderCard {
