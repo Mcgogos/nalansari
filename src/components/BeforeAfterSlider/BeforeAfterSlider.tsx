@@ -55,8 +55,8 @@ export default function BeforeAfterSlider({ embedded = false }: { embedded?: boo
           <h2 className="display-text">{language === 'tr' ? 'Gerçek Dönüşümler' : 'Real Transformations'}</h2>
           <p className="text-lg">
             {language === 'tr' 
-              ? "Düzenli klinik pilates ve reformer terapisi ile duruş bozukluklarının nasıl düzeltildiğine tanık olun."
-              : "Witness how posture issues are corrected with regular clinical pilates and reformer therapy."}
+              ? "Kişiye özel Reformer Pilates ve Fitness antrenmanları ile zayıflama, sıkılaşma ve fit bir vücut dönüşümüne tanık olun."
+              : "Witness the physical body transformation, weight loss, and athletic toning with personalized Reformer Pilates & Fitness."}
           </p>
         </div>
 
