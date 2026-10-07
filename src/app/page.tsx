@@ -17,7 +17,6 @@ import { ConversionForm } from '@/components/ConversionForm';
 import { FreeTrialForm } from '@/components/FreeTrialForm';
 import { Location, Footer } from '@/components/Footer';
 import { FloatingWhatsApp } from '@/components/FloatingWhatsApp';
-import { MusePowerPill } from '@/components/MusePowerPill';
 
 export default function Home() {
   const [splashFinished, setSplashFinished] = useState(false);
@@ -41,7 +40,6 @@ export default function Home() {
         <Location />
         <Footer />
         <FloatingWhatsApp />
-        <MusePowerPill />
       </main>
     </>
   );

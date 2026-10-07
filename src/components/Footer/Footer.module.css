@@ -44,7 +44,7 @@
 /* FOOTER */
 .footer {
   background-color: #0E0E0E;
-  padding: 7rem 0 6rem; /* Extra 6rem bottom padding so floating WhatsApp never overlaps */
+  padding: 7rem 0 3rem;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   position: relative;
 }
@@ -104,84 +104,138 @@
   color: var(--color-mustard);
 }
 
-/* ── Bottom Bar ── */
+/* ── Bottom Bar (Appears only when scrolling to footer) ── */
 .bottomBar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-top: 2.5rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  gap: 1.5rem;
+  gap: 2rem;
   flex-wrap: wrap;
 }
 
-.copyrightText {
-  color: rgba(255, 255, 255, 0.6);
+/* ── Left Muse Info & Legal Nav ── */
+.museInfoBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.museCopyright {
+  color: rgba(255, 255, 255, 0.75);
   font-size: 0.875rem;
+  font-weight: 600;
 }
 
-/* ── Prominent Muse Creative House Designer Badge ── */
-.designerLink {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  text-decoration: none;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  padding: 0.5rem 1rem 0.5rem 0.85rem;
-  border-radius: 9999px;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-.designerLink:hover {
-  background: rgba(234, 179, 8, 0.12);
-  border-color: rgba(234, 179, 8, 0.5);
-  box-shadow: 0 0 20px rgba(234, 179, 8, 0.25);
-  transform: translateY(-2px);
-}
-
-.designerLabel {
-  font-size: 0.8125rem;
-  color: rgba(255, 255, 255, 0.7);
-  font-weight: 500;
-}
-
-.museLogoFrame {
-  width: 34px;
-  height: 34px;
-  border-radius: 8px;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+.legalNav {
   display: flex;
   align-items: center;
-  justify-content: center;
-  background: #000;
-  box-shadow: 0 0 10px rgba(255, 0, 0, 0.2);
-  transition: transform 0.3s ease;
+  gap: 0.65rem;
 }
 
-.designerLink:hover .museLogoFrame {
-  border-color: #EAB308;
-  transform: scale(1.08);
+.legalBtn {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s ease;
 }
 
-.museLogoImg {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.designerName {
-  font-size: 0.875rem;
-  font-weight: 800;
-  color: #FFFFFF;
-  letter-spacing: -0.01em;
-  transition: color 0.3s ease;
-}
-
-.designerLink:hover .designerName {
+.legalBtn:hover {
   color: #EAB308;
+  text-decoration: underline;
+}
+
+.contactLink {
+  color: #EAB308;
+  font-size: 0.8125rem;
+  font-weight: 800;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.contactLink:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+.dotDivider {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.75rem;
+}
+
+/* ── Inline Power Pill Badge (ROZET 1 - Non-fixed) ── */
+.musePowerPillInline {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: #0a0a0a;
+  border: 1.5px solid #ffffff;
+  border-radius: 999px;
+  padding: 6px 20px 6px 6px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.08);
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.musePowerPillInline:hover {
+  transform: scale(1.05);
+  border-color: #EAB308;
+  box-shadow: 0 12px 35px rgba(234, 179, 8, 0.3);
+}
+
+.musePillLogo {
+  width: 44px;
+  height: 44px;
+  background: #ffffff;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.musePillLogo img {
+  width: 36px;
+  height: 36px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.musePillText strong {
+  color: #ffffff;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  line-height: 1;
+  letter-spacing: 0.12em;
+  display: block;
+}
+
+.musePillSub {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 9px;
+  line-height: 1;
+  letter-spacing: 0.16em;
+  margin-top: 2px;
+}
+
+.redDot {
+  width: 6px;
+  height: 6px;
+  background: #FF3B30;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 8px rgba(255, 59, 48, 0.8);
 }
 
 @media (max-width: 768px) {
@@ -195,15 +249,15 @@
     gap: 2rem;
     text-align: center;
   }
-
-  .footer {
-    padding-bottom: 7rem; /* Extra space on mobile so floating WhatsApp never covers footer */
-  }
   
   .bottomBar {
     flex-direction: column;
-    gap: 1.25rem;
+    gap: 1.5rem;
     text-align: center;
+    align-items: center;
+  }
+
+  .museInfoBlock {
     align-items: center;
   }
 }
