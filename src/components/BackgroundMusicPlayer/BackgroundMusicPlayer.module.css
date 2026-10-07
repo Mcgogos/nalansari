@@ -1,8 +1,14 @@
-.tinyMusicBtn {
+.playerWrapper {
   position: fixed;
   top: 90px;
   right: 24px;
   z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tinyMusicBtn {
   display: inline-flex;
   align-items: center;
   gap: 5px;
@@ -13,7 +19,7 @@
   padding: 6px 10px;
   border-radius: 999px;
   cursor: pointer;
-  opacity: 0.45;
+  opacity: 0.5;
   transition: all 0.3s ease;
 }
 
@@ -28,6 +34,43 @@
 .tinyMusicBtn.playing {
   color: #EAB308;
   border-color: rgba(234, 179, 8, 0.3);
+  opacity: 0.85;
+}
+
+.voiceBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(234, 179, 8, 0.12);
+  border: 1px solid rgba(234, 179, 8, 0.3);
+  color: #EAB308;
+  padding: 5px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-family: 'Inter', ui-sans-serif, sans-serif;
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  transition: all 0.3s ease;
+}
+
+.voiceBtn:hover {
+  background: #EAB308;
+  color: #000000;
+  transform: scale(1.05);
+}
+
+.voiceActive {
+  animation: pulseVoice 1.5s infinite alternate;
+}
+
+@keyframes pulseVoice {
+  0% { box-shadow: 0 0 0 0 rgba(234, 179, 8, 0.4); }
+  100% { box-shadow: 0 0 0 8px rgba(234, 179, 8, 0); }
+}
+
+.voiceLabel {
+  text-transform: uppercase;
 }
 
 .miniWave {
@@ -53,9 +96,15 @@
 }
 
 @media (max-width: 768px) {
-  .tinyMusicBtn {
+  .playerWrapper {
     top: 80px;
     right: 16px;
+    gap: 6px;
+  }
+  .tinyMusicBtn {
     padding: 5px 8px;
+  }
+  .voiceLabel {
+    display: none;
   }
 }

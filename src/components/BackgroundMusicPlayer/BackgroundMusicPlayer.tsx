@@ -1,39 +1,65 @@
 'use client';
 
 import React, { useState, useRef, useEffect } from 'react';
-import { Volume2, VolumeX } from 'lucide-react';
+import { Volume2, VolumeX, Mic } from 'lucide-react';
 import styles from './BackgroundMusicPlayer.module.css';
 
-// Kiasmos - Looped (Minimalist Neoclassical Ambient Track)
-const MUSIC_URL = '/kiasmos-looped.mp3';
+const BG_MUSIC_URL = '/kiasmos-looped.mp3';
+const VOICEOVER_URL = '/voiceover-surum1.mp3';
 
 export default function BackgroundMusicPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
-  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const [isVoiceoverActive, setIsVoiceoverActive] = useState(false);
+  
+  const bgAudioRef = useRef<HTMLAudioElement | null>(null);
+  const voiceAudioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
-    const audio = new Audio(MUSIC_URL);
-    audio.loop = true;
-    audio.volume = 0.30; // Soft luxury ambient volume
-    audioRef.current = audio;
+    // 1. Initialize Kiasmos Background Music
+    const bgAudio = new Audio(BG_MUSIC_URL);
+    bgAudio.loop = true;
+    bgAudio.volume = 0.18; // Soft background ambient level during voiceover
+    bgAudioRef.current = bgAudio;
 
-    // Attempt direct autoplay
-    const attemptAutoplay = () => {
-      if (!audioRef.current) return;
-      audioRef.current.play().then(() => {
+    // 2. Initialize SÜRÜM 1 Voiceover
+    const voiceAudio = new Audio(VOICEOVER_URL);
+    voiceAudio.volume = 0.95;
+    voiceAudioRef.current = voiceAudio;
+
+    // When voiceover ends, boost background music back to normal ambient volume
+    voiceAudio.addEventListener('ended', () => {
+      setIsVoiceoverActive(false);
+      if (bgAudioRef.current) {
+        bgAudioRef.current.volume = 0.32; // Swell back to full ambient volume
+      }
+    });
+
+    // Attempt autoplay
+    const startAll = () => {
+      if (!bgAudioRef.current || !voiceAudioRef.current) return;
+      
+      // Start background music
+      bgAudioRef.current.play().then(() => {
         setIsPlaying(true);
+        // Start voiceover over background music
+        voiceAudioRef.current?.play().then(() => {
+          setIsVoiceoverActive(true);
+        }).catch(() => {});
       }).catch(() => {
-        // Autoplay blocked by browser until user interaction
+        // Autoplay policy waiting for user interaction
       });
     };
 
-    attemptAutoplay();
+    startAll();
 
-    // Fallback: Start audio automatically on the first click anywhere on the page
+    // Fallback: Start both on first click/touch anywhere
     const handleFirstInteraction = () => {
-      if (audioRef.current && audioRef.current.paused) {
-        audioRef.current.play().then(() => {
+      if (bgAudioRef.current && bgAudioRef.current.paused) {
+        bgAudioRef.current.play().then(() => {
           setIsPlaying(true);
+          voiceAudioRef.current?.play().then(() => {
+            setIsVoiceoverActive(true);
+          }).catch(() => {});
         }).catch(() => {});
       }
       window.removeEventListener('click', handleFirstInteraction);
@@ -46,41 +72,87 @@ export default function BackgroundMusicPlayer() {
     return () => {
       window.removeEventListener('click', handleFirstInteraction);
       window.removeEventListener('touchstart', handleFirstInteraction);
-      if (audioRef.current) {
-        audioRef.current.pause();
-        audioRef.current = null;
+      if (bgAudioRef.current) {
+        bgAudioRef.current.pause();
+        bgAudioRef.current = null;
+      }
+      if (voiceAudioRef.current) {
+        voiceAudioRef.current.pause();
+        voiceAudioRef.current = null;
       }
     };
   }, []);
 
-  const toggleMusic = (e: React.MouseEvent) => {
+  const toggleAll = (e: React.MouseEvent) => {
     e.stopPropagation();
-    if (!audioRef.current) return;
+    if (!bgAudioRef.current) return;
 
     if (isPlaying) {
-      audioRef.current.pause();
+      bgAudioRef.current.pause();
+      if (voiceAudioRef.current) voiceAudioRef.current.pause();
       setIsPlaying(false);
+      setIsVoiceoverActive(false);
     } else {
-      audioRef.current.play().then(() => {
+      bgAudioRef.current.play().then(() => {
         setIsPlaying(true);
+        if (voiceAudioRef.current && voiceAudioRef.current.currentTime < voiceAudioRef.current.duration) {
+          voiceAudioRef.current.play().then(() => {
+            setIsVoiceoverActive(true);
+          }).catch(() => {});
+        }
       }).catch(() => {});
     }
   };
 
+  const replayVoiceover = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (!voiceAudioRef.current) return;
+    
+    voiceAudioRef.current.currentTime = 0;
+    if (bgAudioRef.current) {
+      bgAudioRef.current.volume = 0.18; // Duck background music volume
+      if (bgAudioRef.current.paused) {
+        bgAudioRef.current.play();
+        setIsPlaying(true);
+      }
+    }
+    voiceAudioRef.current.play().then(() => {
+      setIsVoiceoverActive(true);
+      setIsPlaying(true);
+    }).catch(() => {});
+  };
+
   return (
-    <button 
-      onClick={toggleMusic} 
-      className={`${styles.tinyMusicBtn} ${isPlaying ? styles.playing : ''}`}
-      aria-label={isPlaying ? "Müziği Kapat" : "Müziği Aç"}
-      title={isPlaying ? "Müziği Kapat" : "Müziği Aç"}
-    >
-      {isPlaying ? <Volume2 size={14} /> : <VolumeX size={14} />}
+    <div className={styles.playerWrapper}>
+      {/* Main Toggle Button */}
+      <button 
+        onClick={toggleAll} 
+        className={`${styles.tinyMusicBtn} ${isPlaying ? styles.playing : ''}`}
+        aria-label={isPlaying ? "Sesi Kapat" : "Sesi Aç"}
+        title={isPlaying ? "Sesi Kapat" : "Sesi Aç"}
+      >
+        {isPlaying ? <Volume2 size={14} /> : <VolumeX size={14} />}
+        {isPlaying && (
+          <span className={styles.miniWave}>
+            <span></span>
+            <span></span>
+          </span>
+        )}
+      </button>
+
+      {/* Replay Voiceover Quick Button */}
       {isPlaying && (
-        <span className={styles.miniWave}>
-          <span></span>
-          <span></span>
-        </span>
+        <button 
+          onClick={replayVoiceover} 
+          className={`${styles.voiceBtn} ${isVoiceoverActive ? styles.voiceActive : ''}`}
+          title="Tanıtım Seslendirmesini Tekrar Dinle (SÜRÜM 1)"
+        >
+          <Mic size={12} />
+          <span className={styles.voiceLabel}>
+            {isVoiceoverActive ? "Seslendirme Çalıyor…" : "Seslendirme"}
+          </span>
+        </button>
       )}
-    </button>
+    </div>
   );
 }
