@@ -43,6 +43,29 @@
 
 .header p {
   color: var(--color-soft-gray);
+  margin-bottom: 1.5rem;
+}
+
+.googleLinkBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: rgba(234, 179, 8, 0.15);
+  color: #EAB308;
+  border: 1px solid rgba(234, 179, 8, 0.4);
+  padding: 0.65rem 1.25rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.googleLinkBtn:hover {
+  background-color: #EAB308;
+  color: #000000;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(234, 179, 8, 0.3);
 }
 
 .carouselContainer {

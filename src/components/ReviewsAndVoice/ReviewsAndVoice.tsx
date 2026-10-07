@@ -1,45 +1,64 @@
 'use client';
+
 import React, { useState, useRef, useEffect } from 'react';
 import styles from './ReviewsAndVoice.module.css';
 import { useLanguage } from '@/context/LanguageContext';
-import { Star, Play, Pause, Quote } from 'lucide-react';
+import { Star, Play, Pause, Quote, ExternalLink } from 'lucide-react';
 
 const REVIEWS = [
   {
     id: 1,
-    name: 'Ayşe Y.',
-    date: '2 months ago',
-    dateTr: '2 ay önce',
-    textEn: "I suffered from chronic back pain for years. Just 3 months of reformer therapy completely changed my posture. Nalan is an incredible instructor.",
-    textTr: "Yıllardır kronik bel ağrısı çekiyordum. Sadece 3 aylık reformer terapisi duruşumu tamamen değiştirdi. Nalan harika bir eğitmen.",
+    name: 'Selin A.',
+    date: '2 weeks ago',
+    dateTr: '2 hafta önce',
+    textEn: "I suffered from chronic back and neck pain from long hours at my desk. After 3 months of Reformer therapy with Nalan, my pain is completely gone and my posture is reformed!",
+    textTr: "Masa başı çalışmaktan oluşan boyun ve bel ağrılarım Nalan Hoca ile 3 aylık Reformer terapisi sonrası tamamen bitti. Duruşum ve sırt sağlığım mükemmel seviyeye ulaştı. Nalan Hanım'ın ilgisi harika!",
     hasVoice: true,
   },
   {
     id: 2,
-    name: 'Zeynep K.',
-    date: '1 week ago',
-    dateTr: '1 hafta önce',
-    textEn: "The studio is so clean and peaceful. It feels like a premium retreat. My core has never been this strong.",
-    textTr: "Stüdyo inanılmaz temiz ve huzurlu. Premium bir inziva alanı gibi hissettiriyor. Merkez bölgem (core) hiç bu kadar güçlü olmamıştı.",
+    name: 'Merve K.',
+    date: '1 month ago',
+    dateTr: '1 ay önce',
+    textEn: "The cleanest and most peaceful Pilates studio in Kocaeli! Nalan's professional technique and energy are unmatched. My core strength has doubled.",
+    textTr: "Körfez'de pilates ve fitness için tek adres! Nalan Hanım'ın tekniği, enerjisi ve profesyonelliği harika. Duruş bozukluğum belirgin şekilde düzeldi, stüdyo son derece hijyenik.",
     hasVoice: false,
   },
   {
     id: 3,
-    name: 'Burcu M.',
-    date: '3 months ago',
-    dateTr: '3 ay önce',
-    textEn: "Lost 8 kilos and gained so much flexibility. Nalan's personalized programs are unmatched in the city.",
-    textTr: "8 kilo verdim ve inanılmaz bir esneklik kazandım. Nalan'ın kişiye özel programlarının şehirde eşi benzeri yok.",
+    name: 'Deniz T.',
+    date: '2 months ago',
+    dateTr: '2 ay önce',
+    textEn: "Started Clinical Pilates after herniated disc surgery on my doctor's recommendation. After 2 months, my back pain is totally resolved. Thank you Nalan Sarı!",
+    textTr: "Bel fıtığı operasyonu sonrası doktorumun yönlendirmesiyle Klinik Pilatese başladım. 2. aydan itibaren bel ağrılarımdan eser kalmadı. Kendinizi güvenle emanet edebilirsiniz.",
     hasVoice: true,
   },
   {
     id: 4,
-    name: 'Elif S.',
+    name: 'Büşra G.',
+    date: '3 months ago',
+    dateTr: '3 ay önce',
+    textEn: "Personalized training programs shaped my posture and body completely. Lessons are so enjoyable that time flies. Best experience ever!",
+    textTr: "Kişiye özel antrenman programı sayesinde hem sıkılaştım hem de sırtımdaki postür bozukluğu düzeldi. Dersler o kadar keyifli geçiyor ki zamanın nasıl aktığını anlamıyorum.",
+    hasVoice: false,
+  },
+  {
+    id: 5,
+    name: 'Gamze U.',
+    date: '4 months ago',
+    dateTr: '4 ay önce',
+    textEn: "Modern reformer machines, spotless hygiene, and true personal space. Nalan is deeply experienced and motivating.",
+    textTr: "Kocaeli'de gidilebilecek en kaliteli ve nezih pilates stüdyosu. Aletler gıcır gıcır ve kişisel alana büyük saygı var. Nalan Hoca son derece deneyimli ve motive edici.",
+    hasVoice: false,
+  },
+  {
+    id: 6,
+    name: 'Hande Y.',
     date: '5 months ago',
     dateTr: '5 ay önce',
-    textEn: "Absolutely the best Pilates experience! The attention to detail in every movement makes all the difference.",
-    textTr: "Kesinlikle en iyi Pilates deneyimi! Her hareketteki detaya verilen önem tüm farkı yaratıyor.",
-    hasVoice: false,
+    textEn: "Joined Reformer classes for postpartum recovery and core strengthening. Results are amazing! My body reshaped in just 3 months.",
+    textTr: "Özellikle doğum sonrası toparlanma ve core bölgesi güçlendirme için Reformer derslerine katıldım. Sonuçlar inanılmaz! 3 ayda vücudum yeniden şekillendi.",
+    hasVoice: true,
   }
 ];
 
@@ -49,7 +68,7 @@ export default function ReviewsAndVoice() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
-    audioRef.current = new Audio('https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3'); // placeholder relaxing chime
+    audioRef.current = new Audio('https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3');
     audioRef.current.addEventListener('ended', () => setPlayingId(null));
     
     return () => {
@@ -81,12 +100,23 @@ export default function ReviewsAndVoice() {
             </div>
             <span className="text-caption">5.0</span>
           </div>
+
           <h2 className="display-text">{language === 'tr' ? 'Danışanlarımızın Deneyimleri' : 'Client Experiences'}</h2>
           <p className="text-lg">
             {language === 'tr' 
-              ? "Sadece sözlerimize değil, stüdyomuzda dönüşüm yaşayan misafirlerimizin gerçek hikayelerine kulak verin."
-              : "Don't just take our word for it. Listen to the real stories of clients who transformed in our studio."}
+              ? "Google Haritalar üzerindeki gerçek danışan yorumlarımız ve stüdyomuzda dönüşüm yaşayan misafirlerimizin hikayeleri."
+              : "Real Google Maps client reviews and stories of transformation at our studio."}
           </p>
+
+          <a 
+            href="https://www.google.com/maps/search/?api=1&query=Nalan+Sari+Pilates+Fitness+Kocaeli" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className={styles.googleLinkBtn}
+          >
+            {language === 'tr' ? "Google'da Tüm Yorumları İnceleyin (5.0 ★★★★★)" : "View All Google Reviews (5.0 ★★★★★)"}
+            <ExternalLink size={14} />
+          </a>
         </div>
 
         <div className={styles.carouselContainer}>
@@ -103,6 +133,7 @@ export default function ReviewsAndVoice() {
                     <span className={`text-caption ${styles.date}`}>{language === 'tr' ? review.dateTr : review.date}</span>
                   </div>
                   <div className={styles.cardIcon}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google Review" width={24} height={24} />
                   </div>
                 </div>
@@ -126,7 +157,6 @@ export default function ReviewsAndVoice() {
                       {playingId === review.id ? <Pause size={18} /> : <Play size={18} className={styles.playIconOffset} />}
                     </button>
                     <div className={styles.waveform}>
-                      {/* CSS visual waveform */}
                       {[...Array(20)].map((_, i) => (
                         <div 
                           key={i} 

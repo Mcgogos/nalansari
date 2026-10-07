@@ -38,7 +38,7 @@ export default function FreeTrialForm() {
     setTimeout(() => {
       setLoading(false);
       setSubmitted(true);
-      window.open(`https://wa.me/905444798807?text=${encodeURIComponent(msg)}`, '_blank');
+      window.open(`https://api.whatsapp.com/send?phone=905444798807&text=${encodeURIComponent(msg)}`, '_blank');
     }, 800);
   };
 

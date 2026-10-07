@@ -50,8 +50,9 @@ export default function ConversionForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Normally send data to API here
     setIsSubmitted(true);
+    const msg = `Merhaba Nalan Hanım! Ön değerlendirme formunu doldurdum:\n\n👤 İsim: ${formData.name}\n📞 Telefon: ${formData.phone}\n🎯 İlgi: ${formData.interest}\n💪 Hedef: ${formData.goal}\n⭐ Deneyim: ${formData.experience}`;
+    window.open(`https://api.whatsapp.com/send?phone=905444798807&text=${encodeURIComponent(msg)}`, '_blank');
   };
 
   const isStepValid = () => {
