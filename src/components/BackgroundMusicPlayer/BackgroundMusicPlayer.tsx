@@ -4,8 +4,8 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Volume2, VolumeX } from 'lucide-react';
 import styles from './BackgroundMusicPlayer.module.css';
 
-// Relaxing luxury spa & ambient lounge background track
-const MUSIC_URL = 'https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3';
+// Kiasmos - Looped (Minimalist Neoclassical Ambient Track)
+const MUSIC_URL = '/kiasmos-looped.mp3';
 
 export default function BackgroundMusicPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
