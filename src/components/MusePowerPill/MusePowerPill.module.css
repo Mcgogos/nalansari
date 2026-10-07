@@ -26,17 +26,18 @@
 .musePillLogo {
   width: 44px;
   height: 44px;
-  background: #ffffff;
+  background: #000000;
   border-radius: 50%;
   display: grid;
   place-items: center;
   overflow: hidden;
   flex-shrink: 0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .musePillLogo img {
-  width: 36px;
-  height: 36px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   border-radius: 50%;
 }
