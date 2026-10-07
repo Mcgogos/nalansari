@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700;900&display=swap');
+
+.museCornerBlock {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  background: #000000;
+  color: #ffffff;
+  border-left: 2px solid #ffffff;
+  border-top: 2px solid #ffffff;
+  padding: 16px 18px;
+  min-width: 148px;
+  text-decoration: none;
+  font-family: 'Space Grotesk', monospace, sans-serif;
+  box-shadow: -8px -8px 0 rgba(255, 255, 255, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.museCornerBlock:hover {
+  transform: translate(-3px, -3px);
+  border-color: #EAB308;
+  box-shadow: -10px -10px 20px rgba(234, 179, 8, 0.25);
+}
+
+.topRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logoImg {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.museCornerTop {
+  display: block;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 8px;
+  line-height: 1;
+  letter-spacing: 0.2em;
+  opacity: 0.7;
+}
+
+.museCornerBlock strong {
+  display: block;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 900;
+  font-size: 15px;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  margin: 10px 0;
+  color: #ffffff;
+}
+
+.museCornerBottom {
+  display: block;
+  margin-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 8px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 8px;
+  line-height: 1;
+  letter-spacing: 0.2em;
+  opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  .museCornerBlock {
+    padding: 12px 14px;
+    min-width: 125px;
+  }
+  .museCornerBlock strong {
+    font-size: 13px;
+    margin: 6px 0;
+  }
+}
