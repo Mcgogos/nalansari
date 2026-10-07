@@ -39,25 +39,6 @@ export default function Footer() {
           <p className={styles.copyrightText}>
             &copy; {new Date().getFullYear()} Nalan Sarı Pilates & Fitness. {t('footer.rights')}
           </p>
-          
-          {/* Prominent Designer Badge – Muse Creative House */}
-          <a 
-            href="https://www.musecreativehouse.com" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className={styles.designerLink}
-          >
-            <span className={styles.designerLabel}>Designed by</span>
-            <div className={styles.museLogoFrame}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img 
-                src="/muse-logo.jpg" 
-                alt="Muse Creative House" 
-                className={styles.museLogoImg} 
-              />
-            </div>
-            <span className={styles.designerName}>Muse Creative House</span>
-          </a>
         </div>
       </div>
     </footer>
