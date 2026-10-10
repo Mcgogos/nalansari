@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 import styles from './Trainers.module.css';
 
@@ -51,7 +52,9 @@ export default function Trainers() {
               <h3 className={styles.name}>{trainer.name}</h3>
               <p className={styles.expertise}>{trainer.expertise}</p>
               <p className={styles.info}>{t(trainer.infoKey as any)}</p>
-              <span className={styles.cta}>{t('trainers.cta')} &rarr;</span>
+              <Link href="#ucretsiz-deneme" className={styles.cta} style={{ textDecoration: 'none' }}>
+                {t('trainers.cta')} &rarr;
+              </Link>
             </div>
           ))}
         </div>
