@@ -45,7 +45,7 @@ export default function InstagramGrid() {
         </div>
         
         <div className={styles.ctaContainer}>
-          <Link href="https://www.instagram.com/ns.fithouse.pilates.fitness?stkn=emo0Nnd5YWZraGJr" target="_blank" rel="noopener noreferrer" className={styles.ctaButton}>
+          <Link href="https://www.instagram.com/nalansarifithouse/" target="_blank" rel="noopener noreferrer" className={styles.ctaButton}>
             {t('ig.cta')} <ArrowRight size={18} />
           </Link>
         </div>

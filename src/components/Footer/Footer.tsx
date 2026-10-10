@@ -36,7 +36,7 @@ export default function Footer() {
             </div>
             
             <div className={styles.footerNav}>
-              <Link href="https://www.instagram.com/ns.fithouse.pilates.fitness?stkn=emo0Nnd5YWZraGJr" className={`nav-link ${styles.footerLink}`} target="_blank" rel="noopener noreferrer">Instagram</Link>
+              <Link href="https://www.instagram.com/nalansarifithouse/" className={`nav-link ${styles.footerLink}`} target="_blank" rel="noopener noreferrer">Instagram</Link>
               <Link href={`https://wa.me/905444798807?text=${encodeURIComponent(t('wa.defaultMessage'))}`} className={`nav-link ${styles.footerLink}`}>WhatsApp</Link>
               <Link href="#ucretsiz-deneme" className={`nav-link ${styles.footerLink}`}>{t('loc.contact.label')}</Link>
             </div>
