@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { useLanguage } from '@/context/LanguageContext';
 import styles from './Trainers.module.css';
 
@@ -12,17 +13,17 @@ const trainers = [
   },
   {
     id: 2,
-    name: 'DENİZ KAYA',
+    name: 'EĞİTMEN 2',
     expertise: 'Pilates Instructor',
     infoKey: 'trainers.t2.desc',
-    image: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&q=80'
+    image: '/images/trainers/trainer2.jpg'
   },
   {
     id: 3,
-    name: 'CAN YILMAZ',
+    name: 'EĞİTMEN 3',
     expertise: 'Fitness Coach',
     infoKey: 'trainers.t3.desc',
-    image: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&q=80'
+    image: '/images/trainers/trainer3.jpg'
   }
 ];
 
@@ -38,12 +39,12 @@ export default function Trainers() {
           {trainers.map((trainer) => (
             <div key={trainer.id} className={styles.card}>
               <div className={styles.imageWrapper}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img 
+                <Image 
                   src={trainer.image} 
-                  alt={trainer.name} 
+                  alt={trainer.name}
+                  fill
+                  sizes="(max-width: 768px) 80vw, 33vw"
                   className={styles.image}
-                  loading="lazy"
                 />
               </div>
               <div className={styles.mustardLine}></div>
