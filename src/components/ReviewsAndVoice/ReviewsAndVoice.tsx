@@ -14,6 +14,7 @@ const REVIEWS = [
     textEn: "I suffered from chronic back and neck pain from long hours at my desk. After 3 months of Reformer therapy with Nalan, my pain is completely gone!",
     textTr: "Masa başı çalışmaktan oluşan boyun ve bel ağrılarım Nalan Hoca ile 3 aylık Reformer terapisi sonrası tamamen bitti. Nalan Hanım'ın ilgisi mükemmel!",
     hasVoice: true,
+    audioUrl: '/audio/selin-a.mp3'
   },
   {
     id: 2,
@@ -59,12 +60,10 @@ export default function ReviewsAndVoice() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
-    audioRef.current = new Audio('https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3');
-    audioRef.current.addEventListener('ended', () => setPlayingId(null));
-    
     return () => {
       if (audioRef.current) {
         audioRef.current.pause();
+        audioRef.current = null;
       }
     };
   }, []);
@@ -74,8 +73,17 @@ export default function ReviewsAndVoice() {
       audioRef.current?.pause();
       setPlayingId(null);
     } else {
+      if (audioRef.current) {
+        audioRef.current.pause();
+      }
+      
+      const review = REVIEWS.find(r => r.id === id);
+      const url = review?.audioUrl || 'https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3';
+      
+      audioRef.current = new Audio(url);
+      audioRef.current.addEventListener('ended', () => setPlayingId(null));
       setPlayingId(id);
-      audioRef.current?.play().catch(e => console.log('Audio play error:', e));
+      audioRef.current.play().catch(e => console.log('Audio play error:', e));
     }
   };
 
