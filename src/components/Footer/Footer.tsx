@@ -48,7 +48,7 @@ export default function Footer() {
             {/* Left Info & Legal Block */}
             <div className={styles.museInfoBlock}>
               <p className={styles.museCopyright}>
-                &copy; 2024 Muse Creative House &nbsp;·&nbsp; Kocaeli / Körfez
+                &copy; 2026 Muse Creative House &nbsp;·&nbsp; Kocaeli / Körfez
               </p>
               <div className={styles.legalNav}>
                 <button 
