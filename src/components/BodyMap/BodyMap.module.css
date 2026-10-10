@@ -78,10 +78,10 @@
   animation: pulse 2s infinite;
 }
 
-.dotNeck { top: 12.5%; left: 50%; transform: translate(-50%, -50%); }
-.dotBack { top: 22.5%; left: 50%; transform: translate(-50%, -50%); }
-.dotCore { top: 35%; left: 50%; transform: translate(-50%, -50%); }
-.dotLegs { top: 60%; left: 50%; transform: translate(-50%, -50%); }
+.dotNeck { top: 16.25%; left: 50%; transform: translate(-50%, -50%); }
+.dotBack { top: 27.5%; left: 50%; transform: translate(-50%, -50%); }
+.dotCore { top: 43.75%; left: 50%; transform: translate(-50%, -50%); }
+.dotLegs { top: 75%; left: 50%; transform: translate(-50%, -50%); }
 
 @keyframes pulse {
   0% { box-shadow: 0 0 0 0 rgba(212, 167, 44, 0.7); }

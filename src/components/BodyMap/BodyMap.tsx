@@ -64,23 +64,17 @@ export default function BodyMap({ embedded = false }: { embedded?: boolean }) {
         <div className={styles.content}>
           <div className={styles.mapContainer}>
             <svg viewBox="0 0 400 800" className={styles.svgMap}>
-              {/* Abstract Human Silhouette */}
-              <path d="M200 40 C170 40, 170 90, 200 90 C230 90, 230 40, 200 40 Z" fill="var(--color-charcoal)" />
-              <path d="M150 110 Q200 80 250 110 L280 300 Q200 350 120 300 Z" fill="var(--color-charcoal)" />
-              <path d="M160 300 L140 700 Q200 750 200 700 L200 300 Z" fill="var(--color-charcoal)" />
-              <path d="M240 300 L260 700 Q200 750 200 700 L200 300 Z" fill="var(--color-charcoal)" />
-              <path d="M150 110 L80 350 Q100 370 120 350 L160 150 Z" fill="var(--color-charcoal)" />
-              <path d="M250 110 L320 350 Q300 370 280 350 L240 150 Z" fill="var(--color-charcoal)" />
+              {/* Realistic Female Silhouette Image */}
+              <image href="/images/body-map.jpg" x="-100" y="0" width="600" height="800" preserveAspectRatio="xMidYMid slice" style={{ opacity: 0.9, mixBlendMode: 'screen' }} />
               
               {/* Interactive Zones - Neck */}
-              <circle cx="200" cy="100" r="40" className={`${styles.zone} ${activeZone === 'neck' ? styles.active : ''}`} onClick={() => setActiveZone('neck')} />
+              <circle cx="200" cy="130" r="40" className={`${styles.zone} ${activeZone === 'neck' ? styles.active : ''}`} onClick={() => setActiveZone('neck')} />
               {/* Interactive Zones - Back/Shoulders */}
-              <ellipse cx="200" cy="180" rx="70" ry="50" className={`${styles.zone} ${activeZone === 'back' ? styles.active : ''}`} onClick={() => setActiveZone('back')} />
+              <ellipse cx="200" cy="220" rx="70" ry="50" className={`${styles.zone} ${activeZone === 'back' ? styles.active : ''}`} onClick={() => setActiveZone('back')} />
               {/* Interactive Zones - Core */}
-              <ellipse cx="200" cy="280" rx="60" ry="50" className={`${styles.zone} ${activeZone === 'core' ? styles.active : ''}`} onClick={() => setActiveZone('core')} />
+              <ellipse cx="200" cy="350" rx="60" ry="60" className={`${styles.zone} ${activeZone === 'core' ? styles.active : ''}`} onClick={() => setActiveZone('core')} />
               {/* Interactive Zones - Legs */}
-              <path d="M120 350 L140 650 Q200 650 200 350 Z" className={`${styles.zone} ${activeZone === 'legs' ? styles.active : ''}`} onClick={() => setActiveZone('legs')} />
-              <path d="M280 350 L260 650 Q200 650 200 350 Z" className={`${styles.zone} ${activeZone === 'legs' ? styles.active : ''}`} onClick={() => setActiveZone('legs')} />
+              <path d="M140 450 L160 750 Q200 770 240 750 L260 450 Z" className={`${styles.zone} ${activeZone === 'legs' ? styles.active : ''}`} onClick={() => setActiveZone('legs')} />
             </svg>
             
             {/* Pulsing Dots */}
