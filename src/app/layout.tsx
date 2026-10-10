@@ -11,8 +11,27 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Nalan Sarı Pilates & Fitness | Pilates, Fitness ve Personal Training",
-  description: "Nalan Sarı Pilates & Fitness ile Pilates, Fitness, Reformer ve Personal Training deneyimini keşfedin. Size uygun programı seçin ve ilk dersinizi planlayın.",
+  title: "Nalan Sarı Pilates & Fitness | Kocaeli Pilates ve Reformer",
+  description: "Nalan Sarı Pilates & Fitness ile Körfez Kocaeli'de Reformer, Fitness ve Personal Training deneyimini keşfedin. Size uygun programı seçin ve ilk dersinizi planlayın.",
+  keywords: ["pilates", "reformer pilates", "kocaeli pilates", "körfez pilates", "fitness", "personal training", "nalan sarı", "hamile pilatesi"],
+  authors: [{ name: "Muse Creative House" }],
+  metadataBase: new URL('https://nalansari.com'),
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    title: "Nalan Sarı Pilates & Fitness | Kocaeli Pilates Stüdyosu",
+    description: "Reformer, Fitness ve Klinik Pilates hizmetlerimizle gücünüzü keşfedin. Körfez'in en donanımlı pilates stüdyosu.",
+    url: 'https://nalansari.com',
+    siteName: 'Nalan Sarı Pilates & Fitness',
+    locale: 'tr_TR',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Nalan Sarı Pilates & Fitness",
+    description: "Reformer, Fitness ve Klinik Pilates hizmetlerimizle gücünüzü keşfedin.",
+  },
   manifest: "/manifest.json",
   icons: {
     icon: [
