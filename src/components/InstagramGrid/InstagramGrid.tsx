@@ -28,10 +28,9 @@ export default function InstagramGrid() {
             </div>
           </div>
           
-          {/* Vertical Photo */}
+          {/* Vertical Photo -> Instagram Reel Video */}
           <div className={`${styles.gridItem} ${styles.itemVertical}`}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80" alt="Instagram Photo Vertical" className={styles.media} loading="lazy" />
+            <video src="/videos/instagram_reel.mp4" className={styles.media} autoPlay loop muted playsInline />
             <div className={styles.overlay}>
               <Camera size={32} className={styles.instagramIcon} />
             </div>
@@ -42,15 +41,6 @@ export default function InstagramGrid() {
             <p className={styles.quoteText}>
               &quot;{t('ig.quote.p1')}<span>{t('ig.quote.p2')}</span><span dangerouslySetInnerHTML={{ __html: t('ig.quote.p3') }}></span><span>{t('ig.quote.p4')}</span>{t('ig.quote.p5')}&quot;
             </p>
-          </div>
-          
-          {/* Small Photo 2 */}
-          <div className={styles.gridItem}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80" alt="Instagram Photo 2" className={styles.media} loading="lazy" />
-            <div className={styles.overlay}>
-              <Camera size={24} className={styles.instagramIcon} />
-            </div>
           </div>
         </div>
         
