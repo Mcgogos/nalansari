@@ -14,6 +14,15 @@ export const metadata: Metadata = {
   title: "Nalan Sarı Pilates & Fitness | Pilates, Fitness ve Personal Training",
   description: "Nalan Sarı Pilates & Fitness ile Pilates, Fitness, Reformer ve Personal Training deneyimini keşfedin. Size uygun programı seçin ve ilk dersinizi planlayın.",
   manifest: "/manifest.json",
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/favicon-32x32.png', type: 'image/png', sizes: '32x32' },
+    ],
+    apple: [
+      { url: '/apple-icon.png' }
+    ]
+  },
   appleWebApp: {
     capable: true,
     title: "NS Pilates",

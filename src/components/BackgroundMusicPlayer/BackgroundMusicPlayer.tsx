@@ -148,9 +148,6 @@ export default function BackgroundMusicPlayer() {
           title="Tanıtım Seslendirmesini Tekrar Dinle (SÜRÜM 1)"
         >
           <Mic size={12} />
-          <span className={styles.voiceLabel}>
-            {isVoiceoverActive ? "Seslendirme Çalıyor…" : "Seslendirme"}
-          </span>
         </button>
       )}
     </div>
