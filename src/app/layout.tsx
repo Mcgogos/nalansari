@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: "Nalan Sarı Pilates & Fitness | Kocaeli Pilates ve Reformer",
   description: "Nalan Sarı Pilates & Fitness ile Körfez Kocaeli'de Reformer, Fitness ve Personal Training deneyimini keşfedin. Size uygun programı seçin ve ilk dersinizi planlayın.",
   verification: {
-    google: 'google4e56950f4c5560ba',
+    google: 'JvrjU5-sQIkESMp9PuwpvYUoq58LiTnI3PhM6lrSkDw',
   },
   keywords: ["pilates", "reformer pilates", "kocaeli pilates", "körfez pilates", "fitness", "personal training", "nalan sarı", "hamile pilatesi"],
   authors: [{ name: "Muse Creative House" }],
