@@ -9,21 +9,21 @@ const trainers = [
     name: 'NALAN SARI',
     expertise: 'Founder & Master Trainer',
     infoKey: 'trainers.t1.desc',
-    image: '/images/trainers/nalan-sari.jpg'
+    image: '/images/trainers/logo_nalan-sari.jpg'
   },
   {
     id: 2,
     name: 'AYŞENUR TOPÇU',
     expertise: 'Pilates Eğitmeni',
     infoKey: 'trainers.t2.desc',
-    image: '/images/trainers/trainer2.jpg'
+    image: '/images/trainers/logo_trainer2.jpg'
   },
   {
     id: 3,
     name: 'SENEM AKYAZ',
     expertise: 'Pilates Eğitmeni',
     infoKey: 'trainers.t3.desc',
-    image: '/images/trainers/trainer3.jpg'
+    image: '/images/trainers/logo_trainer3.jpg'
   }
 ];
 
