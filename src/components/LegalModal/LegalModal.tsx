@@ -67,7 +67,7 @@ export default function LegalModal({ type, onClose }: LegalModalProps) {
 
               <h3>2. Fikri Mülkiyet Hakları</h3>
               <p>
-                Web sitesinde yer alan tüm tasarım ögeleri, yazılım altyapısı, grafikler, "Muse Creative House" markası ve özel tipografi sistemleri Muse Creative House tarafınca tasarlanmış olup telif hakkı koruması altındadır. İzinsiz kopyalanamaz.
+                Web sitesinde yer alan tüm tasarım ögeleri, yazılım altyapısı, grafikler, &quot;Muse Creative House&quot; markası ve özel tipografi sistemleri Muse Creative House tarafınca tasarlanmış olup telif hakkı koruması altındadır. İzinsiz kopyalanamaz.
               </p>
 
               <h3>3. Hizmet ve Kayıt Şartları</h3>

@@ -7,8 +7,6 @@ import { Hero } from '@/components/Hero';
 import OnboardingQuiz from '@/components/OnboardingQuiz/OnboardingQuiz';
 import { BrandStory } from '@/components/BrandStory';
 import { Services } from '@/components/Services';
-import BodyMap from '@/components/BodyMap/BodyMap';
-import BeforeAfterSlider from '@/components/BeforeAfterSlider/BeforeAfterSlider';
 import TransformSection from '@/components/TransformSection/TransformSection';
 import { Trainers } from '@/components/Trainers';
 import ReviewsAndVoice from '@/components/ReviewsAndVoice/ReviewsAndVoice';

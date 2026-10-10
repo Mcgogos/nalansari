@@ -3,7 +3,7 @@
   inset: 0;
   width: 100vw;
   height: 100vh;
-  background: #0A0A0A;
+  background: var(--color-deep-black);
   z-index: 9999;
   display: flex;
   flex-direction: column;
@@ -20,7 +20,7 @@
   background:
     radial-gradient(ellipse 65% 50% at 20% 50%, rgba(234, 179, 8, 0.15) 0%, transparent 65%),
     radial-gradient(ellipse 65% 50% at 80% 50%, rgba(234, 179, 8, 0.12) 0%, transparent 65%),
-    radial-gradient(ellipse 100% 90% at 50% 50%, #111111 0%, #0A0A0A 85%);
+    radial-gradient(ellipse 100% 90% at 50% 50%, #111111 0%, var(--color-deep-black) 85%);
   pointer-events: none;
 }
 
@@ -64,7 +64,7 @@
   font-weight: 900;
   font-size: clamp(4rem, 14vw, 9.5rem);
   line-height: 0.9;
-  color: #EAB308;
+  color: var(--color-mustard);
   text-shadow: 0 0 40px rgba(234, 179, 8, 0.6);
   display: inline-block;
 }
@@ -75,20 +75,20 @@
   font-weight: 900;
   font-size: clamp(3.2rem, 11vw, 7.5rem);
   line-height: 0.9;
-  color: #FFFFFF;
+  color: var(--color-warm-white);
   letter-spacing: -0.04em;
   display: inline-block;
   overflow: hidden;
   text-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
 }
 
-/* ── Big Letter S (Mustard #EAB308, Georgia 900) ── */
+/* ── Big Letter S (Mustard var(--color-mustard), Georgia 900) ── */
 .bigLetterS {
   font-family: Georgia, serif;
   font-weight: 900;
   font-size: clamp(4rem, 14vw, 9.5rem);
   line-height: 0.9;
-  color: #EAB308;
+  color: var(--color-mustard);
   text-shadow: 0 0 40px rgba(234, 179, 8, 0.6);
   display: inline-block;
 }
@@ -99,7 +99,7 @@
   font-weight: 900;
   font-size: clamp(3.2rem, 11vw, 7.5rem);
   line-height: 0.9;
-  color: #EAB308;
+  color: var(--color-mustard);
   letter-spacing: -0.04em;
   display: inline-block;
   overflow: hidden;
@@ -127,7 +127,7 @@
   font-size: clamp(0.7rem, 1.4vw, 0.9rem);
   font-weight: 800;
   letter-spacing: 0.35em;
-  color: #EAB308;
+  color: var(--color-mustard);
   text-align: center;
   text-transform: uppercase;
   margin-top: 3rem;
@@ -150,3 +150,4 @@
     margin-top: 2rem;
   }
 }
+

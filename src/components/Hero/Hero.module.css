@@ -48,7 +48,7 @@
 .subtitle {
   display: inline-block;
   background-color: rgba(234, 179, 8, 0.15);
-  color: #EAB308;
+  color: var(--color-mustard);
   font-size: 0.75rem;
   font-weight: 900;
   text-transform: uppercase;
@@ -64,7 +64,7 @@
   font-weight: 900;
   line-height: 0.95;
   letter-spacing: -0.025em;
-  color: #FFFFFF;
+  color: var(--color-warm-white);
   margin-bottom: 1.5rem;
 }
 
@@ -88,8 +88,8 @@
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  color: #000000;
-  background-color: #EAB308;
+  color: var(--color-deep-black);
+  background-color: var(--color-mustard);
   font-weight: 800;
   font-size: 1rem;
   padding: 1rem 2.25rem;
@@ -101,7 +101,7 @@
 }
 
 .primaryCta:hover {
-  background-color: #D4A017;
+  background-color: var(--color-mustard);
   transform: translateY(-2px);
   box-shadow: 0 10px 25px rgba(234, 179, 8, 0.35);
 }
@@ -109,7 +109,7 @@
 .secondaryCta {
   font-weight: 800;
   font-size: 1rem;
-  color: #FFFFFF;
+  color: var(--color-warm-white);
   position: relative;
   padding-bottom: 4px;
   transition: color 0.3s ease;
@@ -123,14 +123,14 @@
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: #EAB308;
+  background-color: var(--color-mustard);
   transform: scaleX(0);
   transform-origin: right;
   transition: transform 0.4s ease;
 }
 
 .secondaryCta:hover {
-  color: #EAB308;
+  color: var(--color-mustard);
 }
 
 .secondaryCta:hover::after {
@@ -157,3 +157,4 @@
     justify-content: center;
   }
 }
+

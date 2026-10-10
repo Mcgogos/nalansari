@@ -51,7 +51,7 @@
   align-items: center;
   gap: 0.5rem;
   background-color: rgba(234, 179, 8, 0.15);
-  color: #EAB308;
+  color: var(--color-mustard);
   border: 1px solid rgba(234, 179, 8, 0.4);
   padding: 0.55rem 1.15rem;
   border-radius: 999px;
@@ -62,8 +62,8 @@
 }
 
 .googleLinkBtn:hover {
-  background-color: #EAB308;
-  color: #000000;
+  background-color: var(--color-mustard);
+  color: var(--color-deep-black);
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(234, 179, 8, 0.3);
 }
@@ -122,7 +122,7 @@
   width: 40px;
   height: 40px;
   background-color: rgba(234, 179, 8, 0.2);
-  color: #EAB308;
+  color: var(--color-mustard);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -138,7 +138,7 @@
 .clientName {
   font-size: 0.95rem;
   font-weight: 800;
-  color: #FFFFFF;
+  color: var(--color-warm-white);
   line-height: 1.2;
 }
 
@@ -185,8 +185,8 @@
 .playBtn {
   width: 32px;
   height: 32px;
-  background-color: #EAB308;
-  color: #000000;
+  background-color: var(--color-mustard);
+  color: var(--color-deep-black);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -223,7 +223,7 @@
 
 .barAnimated {
   opacity: 1;
-  background-color: #EAB308;
+  background-color: var(--color-mustard);
   animation: equalize 1s infinite alternate ease-in-out;
 }
 
@@ -253,3 +253,4 @@
     padding: 0 1.25rem;
   }
 }
+

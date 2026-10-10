@@ -4,7 +4,7 @@
 }
 
 .title {
-  color: #FFFFFF;
+  color: var(--color-warm-white);
   text-align: center;
   margin-bottom: 4rem;
   font-weight: 900;
@@ -50,7 +50,7 @@
 }
 
 .footerBigText {
-  color: #FFFFFF;
+  color: var(--color-warm-white);
   text-align: center;
   margin-bottom: 5rem;
   font-weight: 900;
@@ -75,7 +75,7 @@
 }
 
 .brandName {
-  color: #FFFFFF;
+  color: var(--color-warm-white);
   font-weight: 900;
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
@@ -146,12 +146,12 @@
 }
 
 .legalBtn:hover {
-  color: #EAB308;
+  color: var(--color-mustard);
   text-decoration: underline;
 }
 
 .contactLink {
-  color: #EAB308;
+  color: var(--color-mustard);
   font-size: 0.8125rem;
   font-weight: 800;
   text-decoration: none;
@@ -173,8 +173,8 @@
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  background: #0a0a0a;
-  border: 1.5px solid #ffffff;
+  background: var(--color-deep-black);
+  border: 1.5px solid var(--color-warm-white);
   border-radius: 999px;
   padding: 6px 20px 6px 6px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.08);
@@ -184,14 +184,14 @@
 
 .musePowerPillInline:hover {
   transform: scale(1.05);
-  border-color: #EAB308;
+  border-color: var(--color-mustard);
   box-shadow: 0 12px 35px rgba(234, 179, 8, 0.3);
 }
 
 .musePillLogo {
   width: 44px;
   height: 44px;
-  background: #000000;
+  background: var(--color-deep-black);
   border-radius: 50%;
   display: grid;
   place-items: center;
@@ -208,7 +208,7 @@
 }
 
 .musePillText strong {
-  color: #ffffff;
+  color: var(--color-warm-white);
   font-family: 'Space Grotesk', sans-serif;
   font-weight: 700;
   font-size: 11px;
@@ -262,3 +262,4 @@
     align-items: center;
   }
 }
+

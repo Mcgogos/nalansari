@@ -177,7 +177,7 @@ textarea.input {
 }
 
 .nextBtn:hover, .submitBtn:hover {
-  background-color: #e5b634;
+  background-color: var(--color-mustard);
   transform: translateY(-2px);
 }
 
@@ -216,3 +216,4 @@ textarea.input {
     grid-template-columns: 1fr;
   }
 }
+

@@ -19,17 +19,17 @@ export default function BeforeAfterSlider({ embedded = false }: { embedded?: boo
     setSliderPosition(percent);
   };
 
-  const onMouseMove = (e: MouseEvent) => {
-    if (!isDragging) return;
-    handleMove(e.clientX);
-  };
-
-  const onTouchMove = (e: TouchEvent) => {
-    if (!isDragging) return;
-    handleMove(e.touches[0].clientX);
-  };
-
   useEffect(() => {
+    const onMouseMove = (e: MouseEvent) => {
+      if (!isDragging) return;
+      handleMove(e.clientX);
+    };
+
+    const onTouchMove = (e: TouchEvent) => {
+      if (!isDragging) return;
+      handleMove(e.touches[0].clientX);
+    };
+
     const handleMouseUp = () => setIsDragging(false);
     
     if (isDragging) {
@@ -45,6 +45,7 @@ export default function BeforeAfterSlider({ embedded = false }: { embedded?: boo
       window.removeEventListener('touchmove', onTouchMove);
       window.removeEventListener('touchend', handleMouseUp);
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isDragging]);
 
   return (

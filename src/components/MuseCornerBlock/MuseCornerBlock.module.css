@@ -5,10 +5,10 @@
   right: 0;
   bottom: 0;
   z-index: 9999;
-  background: #000000;
-  color: #ffffff;
-  border-left: 2px solid #ffffff;
-  border-top: 2px solid #ffffff;
+  background: var(--color-deep-black);
+  color: var(--color-warm-white);
+  border-left: 2px solid var(--color-warm-white);
+  border-top: 2px solid var(--color-warm-white);
   padding: 16px 18px;
   min-width: 148px;
   text-decoration: none;
@@ -19,7 +19,7 @@
 
 .museCornerBlock:hover {
   transform: translate(-3px, -3px);
-  border-color: #EAB308;
+  border-color: var(--color-mustard);
   box-shadow: -10px -10px 20px rgba(234, 179, 8, 0.25);
 }
 
@@ -54,7 +54,7 @@
   line-height: 0.95;
   letter-spacing: -0.02em;
   margin: 10px 0;
-  color: #ffffff;
+  color: var(--color-warm-white);
 }
 
 .museCornerBottom {
@@ -80,3 +80,4 @@
     margin: 6px 0;
   }
 }
+

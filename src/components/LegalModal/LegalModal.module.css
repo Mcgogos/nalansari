@@ -39,7 +39,7 @@
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.15);
-  color: #ffffff;
+  color: var(--color-warm-white);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -48,8 +48,8 @@
 }
 
 .closeBtn:hover {
-  background: #EAB308;
-  color: #000000;
+  background: var(--color-mustard);
+  color: var(--color-deep-black);
   transform: scale(1.05);
 }
 
@@ -60,7 +60,7 @@
 .badge {
   display: inline-block;
   background: rgba(234, 179, 8, 0.15);
-  color: #EAB308;
+  color: var(--color-mustard);
   font-family: 'Space Grotesk', sans-serif;
   font-size: 0.75rem;
   font-weight: 700;
@@ -73,7 +73,7 @@
 .content h2 {
   font-size: 1.75rem;
   font-weight: 900;
-  color: #ffffff;
+  color: var(--color-warm-white);
   margin-bottom: 0.35rem;
   letter-spacing: -0.02em;
 }
@@ -93,7 +93,7 @@
 .body h3 {
   font-size: 1.05rem;
   font-weight: 800;
-  color: #EAB308;
+  color: var(--color-mustard);
   margin-top: 1.5rem;
   margin-bottom: 0.5rem;
 }
@@ -112,7 +112,7 @@
 }
 
 .body strong {
-  color: #ffffff;
+  color: var(--color-warm-white);
 }
 
 @media (max-width: 640px) {
@@ -123,3 +123,4 @@
     font-size: 1.4rem;
   }
 }
+

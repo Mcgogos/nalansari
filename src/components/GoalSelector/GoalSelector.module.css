@@ -111,6 +111,7 @@
 }
 
 .ctaButton:hover {
-  background-color: #e5b634;
+  background-color: var(--color-mustard);
   transform: translateY(-2px);
 }
+

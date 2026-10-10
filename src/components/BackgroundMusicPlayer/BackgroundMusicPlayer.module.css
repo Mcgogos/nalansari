@@ -26,13 +26,13 @@
 .tinyMusicBtn:hover {
   opacity: 1;
   background: rgba(234, 179, 8, 0.2);
-  border-color: #EAB308;
-  color: #EAB308;
+  border-color: var(--color-mustard);
+  color: var(--color-mustard);
   transform: scale(1.05);
 }
 
 .tinyMusicBtn.playing {
-  color: #EAB308;
+  color: var(--color-mustard);
   border-color: rgba(234, 179, 8, 0.3);
   opacity: 0.85;
 }
@@ -43,7 +43,7 @@
   gap: 4px;
   background: rgba(234, 179, 8, 0.12);
   border: 1px solid rgba(234, 179, 8, 0.3);
-  color: #EAB308;
+  color: var(--color-mustard);
   padding: 5px 10px;
   border-radius: 999px;
   cursor: pointer;
@@ -55,8 +55,8 @@
 }
 
 .voiceBtn:hover {
-  background: #EAB308;
-  color: #000000;
+  background: var(--color-mustard);
+  color: var(--color-deep-black);
   transform: scale(1.05);
 }
 
@@ -82,7 +82,7 @@
 
 .miniWave span {
   width: 2px;
-  background: #EAB308;
+  background: var(--color-mustard);
   border-radius: 1px;
   animation: miniEq 0.8s infinite alternate ease-in-out;
 }
@@ -108,3 +108,4 @@
     display: none;
   }
 }
+

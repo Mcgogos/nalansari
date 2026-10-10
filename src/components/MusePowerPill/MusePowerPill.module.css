@@ -8,8 +8,8 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  background: #0a0a0a;
-  border: 1.5px solid #ffffff;
+  background: var(--color-deep-black);
+  border: 1.5px solid var(--color-warm-white);
   border-radius: 999px;
   padding: 6px 20px 6px 6px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.08);
@@ -19,14 +19,14 @@
 
 .musePowerPill:hover {
   transform: scale(1.05);
-  border-color: #EAB308;
+  border-color: var(--color-mustard);
   box-shadow: 0 12px 35px rgba(234, 179, 8, 0.3);
 }
 
 .musePillLogo {
   width: 44px;
   height: 44px;
-  background: #000000;
+  background: var(--color-deep-black);
   border-radius: 50%;
   display: grid;
   place-items: center;
@@ -43,7 +43,7 @@
 }
 
 .musePillText strong {
-  color: #ffffff;
+  color: var(--color-warm-white);
   font-family: 'Space Grotesk', sans-serif;
   font-weight: 700;
   font-size: 11px;
@@ -96,3 +96,4 @@
     font-size: 8px;
   }
 }
+

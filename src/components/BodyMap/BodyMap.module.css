@@ -145,8 +145,8 @@
 }
 
 .ctaBtn {
-  background-color: #EAB308;
-  color: #000000;
+  background-color: var(--color-mustard);
+  color: var(--color-deep-black);
   font-weight: 800;
   font-size: 1rem;
   padding: 1rem 2rem;
@@ -161,8 +161,8 @@
 }
 
 .ctaBtn:hover {
-  background-color: #D4A017;
-  color: #000000;
+  background-color: var(--color-mustard);
+  color: var(--color-deep-black);
   transform: translateY(-2px);
   box-shadow: 0 10px 25px rgba(234, 179, 8, 0.35);
 }
@@ -206,3 +206,4 @@
     min-height: auto;
   }
 }
+
