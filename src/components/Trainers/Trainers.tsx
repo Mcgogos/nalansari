@@ -13,15 +13,15 @@ const trainers = [
   },
   {
     id: 2,
-    name: 'EĞİTMEN 2',
-    expertise: 'Pilates Instructor',
+    name: 'AYŞENUR TOPÇU',
+    expertise: 'Pilates Eğitmeni',
     infoKey: 'trainers.t2.desc',
     image: '/images/trainers/trainer2.jpg'
   },
   {
     id: 3,
-    name: 'EĞİTMEN 3',
-    expertise: 'Fitness Coach',
+    name: 'SENEM AKYAZ',
+    expertise: 'Pilates Eğitmeni',
     infoKey: 'trainers.t3.desc',
     image: '/images/trainers/trainer3.jpg'
   }
