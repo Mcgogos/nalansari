@@ -11,8 +11,8 @@ export const dictionaries = {
 
     // Hero
     'hero.subtitle': 'Pilates · Fitness · Personal Training',
-    'hero.title': 'FARKLI<br />HAREKET ET.',
-    'hero.desc': 'Bedeni güçlendiren, hareketi dönüştüren ve kendine ayırdığın zamanı değerli kılan bir deneyim.',
+    'hero.title': 'GÜCÜNÜ KEŞFET.',
+    'hero.desc': 'Hareketinle güçlen, kendinle yeniden tanış. Her anını kendine yatırımla değerlendir.',
     'hero.cta.primary': 'İLK DERSİNİ PLANLA',
     'hero.cta.secondary': 'STÜDYOYU KEŞFET',
 
@@ -176,8 +176,8 @@ export const dictionaries = {
 
     // Hero
     'hero.subtitle': 'Pilates · Fitness · Personal Training',
-    'hero.title': 'MOVE<br />DIFFERENT.',
-    'hero.desc': 'An experience that strengthens your body, transforms your movement, and makes the time you dedicate to yourself truly valuable.',
+    'hero.title': 'DISCOVER YOUR STRENGTH.',
+    'hero.desc': 'Strengthen through movement, reconnect with yourself. Make every moment an investment in you.',
     'hero.cta.primary': 'PLAN YOUR FIRST CLASS',
     'hero.cta.secondary': 'EXPLORE STUDIO',
 
