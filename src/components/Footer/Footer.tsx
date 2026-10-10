@@ -29,8 +29,8 @@ export default function Footer() {
             </div>
             
             <div className={styles.footerNav}>
-              <Link href="#pilates" className={`nav-link ${styles.footerLink}`}>{t('nav.services')}</Link>
-              <Link href="#schedule" className={`nav-link ${styles.footerLink}`}>{t('nav.schedule')}</Link>
+              <Link href="#services" className={`nav-link ${styles.footerLink}`}>{t('nav.services')}</Link>
+              <Link href="#planla" className={`nav-link ${styles.footerLink}`}>{t('nav.schedule')}</Link>
               <Link href="#about" className={`nav-link ${styles.footerLink}`}>{t('nav.about')}</Link>
               <Link href="#trainers" className={`nav-link ${styles.footerLink}`}>{t('nav.trainers')}</Link>
             </div>
