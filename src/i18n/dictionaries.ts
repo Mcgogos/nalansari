@@ -38,7 +38,7 @@ export const dictionaries = {
     'goal.post.title': 'MÃ¼kemmel DuruÅŸ',
     'goal.post.desc': 'Omurga saÄŸlÄ±ÄŸÄ±nÄ± merkeze alan klinik pilates yaklaÅŸÄ±mÄ±yla masa baÅŸÄ± aÄŸrÄ±larÄ±ndan kurtulun ve dik bir duruÅŸa sahip olun.',
 
-    
+
 
     // BrandStory
     'story.title': 'HAREKET,<br />EGZERSÄ°ZDEN<br />DAHA FAZLASIDIR.',
@@ -143,13 +143,6 @@ export const dictionaries = {
     'form.success.title': 'TEÅžEKKÃœRLER!',
     'form.success.desc': 'Talebiniz bize ulaÅŸtÄ±. En kÄ±sa sÃ¼rede sizinle iletiÅŸime geÃ§eceÄŸiz.',
 
-    // Legal Modal
-    'legal.privacy.title': 'GÝZLÝLÝK POLÝTÝKASI',
-    'legal.privacy.p1': 'Nalan Sarý Pilates & Fitness olarak, kiþisel verilerinizin güvenliðine önem veriyoruz. Ziyaretiniz sýrasýnda toplanan iletiþim bilgileriniz yalnýzca size daha iyi hizmet sunmak amacýyla kullanýlýr.',
-    'legal.terms.title': 'KULLANIM KOÞULLARI',
-    'legal.terms.p1': 'Web sitemizi ve stüdyo hizmetlerimizi kullanarak, belirlenen kurallara ve randevu politikalarýmýza uymayý kabul etmiþ olursunuz.',
-    'legal.close': 'KAPAT',
-
     // Location & Footer
     'loc.title': 'DENGEYÄ° BUL.',
     'loc.address.label': 'ADRES',
@@ -204,7 +197,7 @@ export const dictionaries = {
     'goal.post.title': 'Perfect Posture',
     'goal.post.desc': 'Get rid of desk pains and achieve an upright posture with a clinical pilates approach centered on spine health.',
 
-    
+
 
     // BrandStory
     'story.title': 'MOVEMENT IS<br />MORE THAN<br />EXERCISE.',
@@ -305,13 +298,6 @@ export const dictionaries = {
     'form.success.title': 'THANK YOU!',
     'form.success.desc': 'Your request has been received. We will contact you shortly.',
 
-    // Legal Modal
-    'legal.privacy.title': 'GÝZLÝLÝK POLÝTÝKASI',
-    'legal.privacy.p1': 'Nalan Sarý Pilates & Fitness olarak, kiþisel verilerinizin güvenliðine önem veriyoruz. Ziyaretiniz sýrasýnda toplanan iletiþim bilgileriniz yalnýzca size daha iyi hizmet sunmak amacýyla kullanýlýr.',
-    'legal.terms.title': 'KULLANIM KOÞULLARI',
-    'legal.terms.p1': 'Web sitemizi ve stüdyo hizmetlerimizi kullanarak, belirlenen kurallara ve randevu politikalarýmýza uymayý kabul etmiþ olursunuz.',
-    'legal.close': 'KAPAT',
-
     // Location & Footer
     'loc.title': 'FIND YOUR BALANCE.',
     'loc.address.label': 'ADDRESS',
@@ -326,18 +312,9 @@ export const dictionaries = {
     'footer.rights': 'All rights reserved.',
     'footer.created': 'Created by Antigravity',
 
-    // Legal Modal
-    'legal.privacy.title': 'PRIVACY POLICY',
-    'legal.privacy.p1': 'At Nalan Sarý Pilates & Fitness, we value the security of your personal data. Contact information collected during your visit is used solely to provide you with better service.',
-    'legal.terms.title': 'TERMS OF SERVICE',
-    'legal.terms.p1': 'By using our website and studio services, you agree to comply with the established rules and appointment policies.',
-    'legal.close': 'CLOSE',
-
     // Floating WhatsApp
     'wa.text': 'CONTACT US',
   }
 };
 
 export type TranslationKey = keyof typeof dictionaries.tr;
-
-
