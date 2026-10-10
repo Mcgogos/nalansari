@@ -7,7 +7,7 @@ import { useLanguage } from '@/context/LanguageContext';
 import styles from './Navigation.module.css';
 
 const navLinks: { labelKey: any; href: string }[] = [
-  { labelKey: 'nav.services', href: '#pilates' },
+  { labelKey: 'nav.services', href: '#services' },
   { labelKey: 'nav.schedule', href: '#schedule' },
   { labelKey: 'nav.about', href: '#about' },
   { labelKey: 'nav.trainers', href: '#trainers' },

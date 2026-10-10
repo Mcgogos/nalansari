@@ -18,6 +18,7 @@ import { FreeTrialForm } from '@/components/FreeTrialForm';
 import { Location, Footer } from '@/components/Footer';
 import { FloatingWhatsApp } from '@/components/FloatingWhatsApp';
 import { BackgroundMusicPlayer } from '@/components/BackgroundMusicPlayer';
+import SchedulePreview from '@/components/SchedulePreview/SchedulePreview';
 
 export default function Home() {
   const [splashFinished, setSplashFinished] = useState(false);
@@ -33,6 +34,7 @@ export default function Home() {
         <OnboardingQuiz />
         <BrandStory />
         <Services />
+        <SchedulePreview />
         <TransformSection />
         <Trainers />
         <ReviewsAndVoice />
