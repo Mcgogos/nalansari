@@ -1,6 +1,8 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { MAINTENANCE_MODE, ADMIN_BYPASS_QUERY, ADMIN_BYPASS_VALUE } from '@/config/maintenance';
+import { Maintenance } from '@/components/Maintenance';
 import { SplashScreen } from '@/components/SplashScreen';
 import { Navigation } from '@/components/Navigation';
 import { Hero } from '@/components/Hero';
@@ -19,6 +21,21 @@ import { BackgroundMusicPlayer } from '@/components/BackgroundMusicPlayer';
 
 export default function Home() {
   const [splashFinished, setSplashFinished] = useState(false);
+  const [isAdminBypass, setIsAdminBypass] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get(ADMIN_BYPASS_QUERY) === ADMIN_BYPASS_VALUE || params.get('admin') === '1') {
+        setIsAdminBypass(true);
+      }
+    }
+  }, []);
+
+  // Merkezi bakım modu aktifken ziyaretçilere bilgilendirme ekranını göster
+  if (MAINTENANCE_MODE && !isAdminBypass) {
+    return <Maintenance />;
+  }
 
   return (
     <>
