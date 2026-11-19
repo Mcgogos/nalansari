@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import { GeistSans } from "geist/font/sans";
 import { LanguageProvider } from "@/context/LanguageContext";
+import { MAINTENANCE_MODE } from "@/config/maintenance";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", weight: ["400", "500", "600", "700"] });
@@ -11,8 +12,24 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Nalan Sarı Pilates & Fitness | Kocaeli Pilates ve Reformer",
-  description: "Nalan Sarı Pilates & Fitness ile Körfez Kocaeli'de Reformer, Fitness ve Personal Training deneyimini keşfedin. Size uygun programı seçin ve ilk dersinizi planlayın.",
+  title: MAINTENANCE_MODE ? "Bilgilendirme | Nalan Sarı" : "Nalan Sarı Pilates & Fitness | Kocaeli Pilates ve Reformer",
+  description: MAINTENANCE_MODE ? "Web sitemiz şu anda geçici olarak hizmet dışıdır." : "Nalan Sarı Pilates & Fitness ile Körfez Kocaeli'de Reformer, Fitness ve Personal Training deneyimini keşfedin. Size uygun programı seçin ve ilk dersinizi planlayın.",
+  robots: MAINTENANCE_MODE ? {
+    index: false,
+    follow: false,
+    nocache: true,
+    googleBot: {
+      index: false,
+      follow: false,
+      noimageindex: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'none',
+      'max-snippet': -1,
+    },
+  } : {
+    index: true,
+    follow: true,
+  },
   verification: {
     google: 'JvrjU5-sQIkESMp9PuwpvYUoq58LiTnI3PhM6lrSkDw',
   },
